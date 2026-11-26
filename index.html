@@ -906,6 +906,65 @@ h1,h2,h3,h4{color:#0A3D62}
 .x-story.has-active .stg{opacity:.62}
 .x-story.has-active .stg.on{opacity:1;filter:drop-shadow(0 0 14px rgba(159,240,228,.45))}
 svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
+.x-story.has-active svg.real .stg{opacity:.84}
+.x-story.has-active svg.real .stg.on{opacity:1}
+/* ===== Shop ===== */
+.shop-hero-img{border-radius:22px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.5);background:#F2F7F9}
+.shop-hero-img img{display:block;width:100%;height:auto}
+.shop-perks{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem;padding:0;list-style:none}
+.shop-perks li{display:inline-flex;align-items:center;gap:.45rem;padding:.5rem .9rem;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:.9rem;font-weight:600}
+.shop-perks svg{width:18px;height:18px;color:var(--aqua)}
+.shop-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+.shop-grid.parts{grid-template-columns:repeat(4,minmax(0,1fr))}
+.sp{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:transform .25s,box-shadow .25s,border-color .25s}
+.sp:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:rgba(20,163,154,.45)}
+.sp .im{display:block;background:#F2F7F9;aspect-ratio:1/1;overflow:hidden}
+.sp.mach .im{aspect-ratio:5/6}
+.sp .im img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.sp:hover .im img{transform:scale(1.03)}
+.sp .bd{padding:1.1rem 1.2rem 1.25rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.sp .tag{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-deep)}
+.sp h3{font-size:1.08rem;margin:0}
+.sp p{font-size:.9rem;color:var(--muted);margin:0}
+.sp .price{font-size:1.25rem;font-weight:700;color:var(--navy);margin-top:.35rem}
+.sp .price small{font-size:.8rem;font-weight:500;color:var(--muted)}
+.sp .act{margin-top:auto;padding-top:.7rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.qty button{width:36px;height:36px;border:0;background:#fff;color:var(--navy);font-size:1.2rem;cursor:pointer}
+.qty button:hover{background:var(--teal-tint)}
+.qty output{min-width:28px;text-align:center;font-weight:700;color:var(--navy)}
+.sp .add.in{background:var(--teal-tint);color:var(--navy);border-color:var(--teal)}
+.shop-note{font-size:.85rem;color:var(--muted);margin-top:1.2rem;max-width:75ch}
+.order-bar{position:fixed;left:50%;bottom:16px;transform:translate(-50%,140%);z-index:60;display:flex;align-items:center;gap:1rem;padding:.6rem .6rem .6rem 1.2rem;border-radius:999px;background:#0A3D62;color:#fff;box-shadow:0 20px 40px -16px rgba(6,42,68,.6);transition:transform .35s ease;max-width:calc(100% - 32px)}
+.order-bar.show{transform:translate(-50%,0)}
+.order-bar b{font-size:1rem}
+.order-bar .btn{padding:.6rem 1.1rem;font-size:.92rem}
+.order{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:start}
+.order-list{background:#fff;border:1px solid var(--line);border-radius:20px;padding:1.2rem 1.3rem}
+.order-list ul{list-style:none;margin:0;padding:0}
+.order-list li{display:flex;justify-content:space-between;gap:1rem;padding:.65rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.order-list li span:last-child{white-space:nowrap;font-weight:600;color:var(--navy)}
+.order-list .tot{display:flex;justify-content:space-between;padding-top:.9rem;font-weight:700;font-size:1.1rem;color:var(--navy)}
+.order-list .empty{color:var(--muted);padding:.6rem 0}
+.order-form{background:#fff;border:1px solid var(--line);border-radius:20px;padding:1.3rem}
+.order-form label{display:block;font-weight:600;font-size:.9rem;color:var(--navy);margin:.8rem 0 .3rem}
+.order-form input,.order-form textarea{width:100%;box-sizing:border-box;padding:.8rem .9rem;border:1px solid var(--line);border-radius:12px;font:inherit;background:#fff}
+.order-form .btn{margin-top:1.1rem;width:100%}
+.order-form .err{color:#B3261E;font-size:.88rem;margin-top:.6rem}
+.order-ready{margin-top:1rem;padding:1rem;border-radius:14px;background:var(--ok-bg);font-size:.92rem}
+.order-ready .btn-row{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.7rem}
+.flt a.fimg{display:block}
+.flt .btns{margin-top:auto;display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.flt .btns .btn{margin-top:0}
+.flt .pr{font-weight:700;color:var(--navy)}
+.prod .pr{font-weight:700;color:var(--navy);font-size:1.05rem}
+@media (max-width:1000px){.shop-grid.parts{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:820px){.shop-grid,.shop-grid.parts{grid-template-columns:repeat(2,minmax(0,1fr))}.order{grid-template-columns:1fr}}
+@media (max-width:520px){.shop-grid{grid-template-columns:1fr}.shop-grid.parts{grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}.sp .bd{padding:.9rem}.sp h3{font-size:.98rem}.sp p{display:none}.order-bar{gap:.6rem;padding-left:1rem}}
+.sp [hidden],.order-list [hidden]{display:none!important}
+@media (max-width:620px){.order-bar{left:12px;right:80px;transform:translateY(160%);justify-content:space-between;font-size:.85rem;padding-left:.9rem}.order-bar.show{transform:none}.order-bar #ob-sum{display:none}}
+#ob-sum::before{content:" \00B7  "}
+@media (max-width:960px){.order-bar{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
 </style>
 </head>
 <body>
@@ -946,6 +1005,7 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
     <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".7" fill="currentColor"/></symbol>
     <symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/><path d="M9 14.5a3 3 0 0 0 3 3"/></symbol>
     <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
     <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></symbol>
   </defs>
 </svg>
@@ -962,6 +1022,7 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
       <a href="#home" data-nav="home">Home</a>
       <a href="#about" data-nav="about">About Us</a>
       <a href="#services" data-nav="services">Our Services</a>
+      <a href="#shop" data-nav="shop">Shop</a>
       <a href="#society-amc" data-nav="society-amc">Society AMC</a>
       <a href="#contact" data-nav="contact">Contact</a>
     </nav>
@@ -990,11 +1051,11 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
     <div class="wrap">
       <div class="x-story-head">
         <p class="x-kicker light">The purification journey</p>
-        <h2>Six stages.<br>One glass of <em>pure water.</em></h2>
+        <h2>Seven stages.<br>One glass of <em>pure water.</em></h2>
       </div>
       <div class="x-story-grid">
         <div class="x-story-vis">
-<svg class="tech real" viewBox="0 0 790 460" role="img" aria-label="Animated six-stage purification with real PIYVO filters: muddy feed water flows through sediment, carbon, RO membrane, UF, copper and alkaline filters, getting clearer at each stage, and fills a glass with clean water">
+<svg class="tech real" viewBox="0 0 790 460" role="img" aria-label="Animated seven-stage purification with real PIYVO filters: muddy feed water flows through a spun sponge filter, sediment, carbon, RO membrane, UF, copper and alkaline filters, getting clearer at each stage, and fills a glass with clean water">
 <defs>
 <pattern id="pat-grid" width="28" height="28" patternUnits="userSpaceOnUse"><path class="grid" d="M28 0H0V28" fill="none"/></pattern>
 <pattern id="m-spun" width="8" height="6" patternUnits="userSpaceOnUse"><path d="M0 3 Q2 1 4 3 T8 3" fill="none" stroke="#E9E1D0" stroke-width="1.1"/></pattern>
@@ -1012,84 +1073,84 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
 <linearGradient id="capg" x1="0" x2="1"><stop offset="0" stop-color="#C9D2D8"/><stop offset=".45" stop-color="#FFFFFF"/><stop offset="1" stop-color="#B7C2C9"/></linearGradient>
 <linearGradient id="glassW" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E3F6FD"/><stop offset="1" stop-color="#8FD3EE"/></linearGradient>
 <linearGradient id="winShade" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".25"/><stop offset=".3" stop-color="#fff" stop-opacity=".18"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
-<clipPath id="win0"><rect x="43" y="152" width="34" height="168" rx="9"/></clipPath>
-<clipPath id="win1"><rect x="148" y="152" width="34" height="168" rx="9"/></clipPath>
-<clipPath id="win2"><rect x="253" y="152" width="34" height="168" rx="9"/></clipPath>
-<clipPath id="win3"><rect x="358" y="152" width="34" height="168" rx="9"/></clipPath>
-<clipPath id="win4"><rect x="463" y="152" width="34" height="168" rx="9"/></clipPath>
-<clipPath id="win5"><rect x="568" y="152" width="34" height="168" rx="9"/></clipPath>
 <clipPath id="glassClip"><path d="M713 302 L718 380 H758 L763 302 Z"/></clipPath>
-<image id="ph0" href="img/stages/spun.png" x="35.2" y="120" width="49.6" height="214" preserveAspectRatio="xMidYMid meet"/>
+<image id="ph0" href="img/stages/spun.png?v=3" x="38.0" y="110" width="40" height="236" preserveAspectRatio="none"/>
 <mask id="pm0" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="790" height="460"><use href="#ph0"/></mask>
-<image id="ph1" href="img/stages/carbon.png" x="135.7" y="120" width="58.6" height="214" preserveAspectRatio="xMidYMid meet"/>
+<image id="ph1" href="img/stages/sediment.png?v=3" x="122.7" y="110" width="54.6" height="236" preserveAspectRatio="none"/>
 <mask id="pm1" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="790" height="460"><use href="#ph1"/></mask>
-<image id="ph2" href="img/stages/ro.png" x="242.4" y="120" width="55.2" height="214" preserveAspectRatio="xMidYMid meet"/>
+<image id="ph2" href="img/stages/carbon-new.png?v=3" x="214.4" y="110" width="55.1" height="236" preserveAspectRatio="none"/>
 <mask id="pm2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="790" height="460"><use href="#ph2"/></mask>
-<image id="ph3" href="img/stages/uf.png" x="323.2" y="120" width="103.6" height="214" preserveAspectRatio="xMidYMid meet"/>
+<image id="ph3" href="img/stages/ro.png?v=3" x="313.0" y="110" width="42" height="236" preserveAspectRatio="none"/>
 <mask id="pm3" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="790" height="460"><use href="#ph3"/></mask>
-<image id="ph4" href="img/stages/copper.png" x="448.4" y="120" width="63.1" height="214" preserveAspectRatio="xMidYMid meet"/>
+<image id="ph4" href="img/stages/uf.png?v=3" x="397.5" y="228" width="57.0" height="118" preserveAspectRatio="none"/>
 <mask id="pm4" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="790" height="460"><use href="#ph4"/></mask>
+<image id="ph5" href="img/stages/copper.png?v=3" x="483.4" y="110" width="69.3" height="236" preserveAspectRatio="none"/>
+<mask id="pm5" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="790" height="460"><use href="#ph5"/></mask>
+<image id="ph6" href="img/stages/alkaline.png?v=3" x="577.5" y="110" width="64.9" height="236" preserveAspectRatio="none"/>
+<mask id="pm6" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="790" height="460"><use href="#ph6"/></mask>
 </defs>
 <rect class="panel" x="6" y="6" width="778" height="448" rx="26"/><rect x="6" y="6" width="778" height="448" rx="26" fill="url(#pat-grid)"/><rect class="frame" x="18" y="18" width="754" height="424" rx="18"/>
 <g class="live-chip"><rect x="636" y="30" width="122" height="26" rx="13"/><circle class="live-dot" cx="653" cy="43" r="4.5"/><text x="664" y="47.5">LIVE FLOW</text></g>
-<path class="tube" d="M14 70 H24 Q50 70 50 96 V128"/>
-<path class="tube" d="M70 128 V96 Q70 70 96 70 H129 Q155 70 155 96 V128"/>
-<path class="tube" d="M175 128 V96 Q175 70 201 70 H234 Q260 70 260 96 V128"/>
-<path class="tube" d="M280 128 V96 Q280 70 306 70 H339 Q365 70 365 96 V128"/>
-<path class="tube" d="M385 128 V96 Q385 70 411 70 H444 Q470 70 470 96 V128"/>
-<path class="tube" d="M490 128 V96 Q490 70 516 70 H549 Q575 70 575 96 V128"/>
-<path class="tube" d="M595 128 V96 Q595 70 621 70 H664 Q690 70 690 96 V200"/>
-<path class="pw" data-seg="0" pathLength="1" stroke="#7B5A33" d="M14 70 H24 Q50 70 50 96 V128"/>
-<path class="pw" data-seg="1" pathLength="1" stroke="#A38A60" d="M70 128 V96 Q70 70 96 70 H129 Q155 70 155 96 V128"/>
-<path class="pw" data-seg="2" pathLength="1" stroke="#A9B4A0" d="M175 128 V96 Q175 70 201 70 H234 Q260 70 260 96 V128"/>
-<path class="pw" data-seg="3" pathLength="1" stroke="#9ED4E3" d="M280 128 V96 Q280 70 306 70 H339 Q365 70 365 96 V128"/>
-<path class="pw" data-seg="4" pathLength="1" stroke="#A9DCEF" d="M385 128 V96 Q385 70 411 70 H444 Q470 70 470 96 V128"/>
-<path class="pw" data-seg="5" pathLength="1" stroke="#B4E3F4" d="M490 128 V96 Q490 70 516 70 H549 Q575 70 575 96 V128"/>
-<path class="pw" data-seg="6" pathLength="1" stroke="#CDEFFC" d="M595 128 V96 Q595 70 621 70 H664 Q690 70 690 96 V200"/>
-<path class="flow" data-flow="0" d="M14 70 H24 Q50 70 50 96 V128"/>
-<path class="flow" data-flow="1" d="M70 128 V96 Q70 70 96 70 H129 Q155 70 155 96 V128"/>
-<path class="flow" data-flow="2" d="M175 128 V96 Q175 70 201 70 H234 Q260 70 260 96 V128"/>
-<path class="flow" data-flow="3" d="M280 128 V96 Q280 70 306 70 H339 Q365 70 365 96 V128"/>
-<path class="flow" data-flow="4" d="M385 128 V96 Q385 70 411 70 H444 Q470 70 470 96 V128"/>
-<path class="flow" data-flow="5" d="M490 128 V96 Q490 70 516 70 H549 Q575 70 575 96 V128"/>
-<path class="flow" data-flow="6" d="M595 128 V96 Q595 70 621 70 H664 Q690 70 690 96 V200"/>
+<path class="tube" d="M14 70 H26 Q50 70 50 94 V124"/>
+<path class="tube" d="M66 124 V94 Q66 70 90 70 H118 Q142 70 142 94 V124"/>
+<path class="tube" d="M158 124 V94 Q158 70 182 70 H210 Q234 70 234 94 V124"/>
+<path class="tube" d="M250 124 V94 Q250 70 274 70 H302 Q326 70 326 94 V124"/>
+<path class="tube" d="M342 124 V94 Q342 70 366 70 H394 Q418 70 418 94 V242"/>
+<path class="tube" d="M434 242 V94 Q434 70 458 70 H486 Q510 70 510 94 V124"/>
+<path class="tube" d="M526 124 V94 Q526 70 550 70 H578 Q602 70 602 94 V124"/>
+<path class="tube" d="M618 124 V94 Q618 70 642 70 H664 Q690 70 690 96 V200"/>
+<path class="pw" data-seg="0" pathLength="1" stroke="#7B5A33" d="M14 70 H26 Q50 70 50 94 V124"/>
+<path class="pw" data-seg="1" pathLength="1" stroke="#8E7048" d="M66 124 V94 Q66 70 90 70 H118 Q142 70 142 94 V124"/>
+<path class="pw" data-seg="2" pathLength="1" stroke="#A38A60" d="M158 124 V94 Q158 70 182 70 H210 Q234 70 234 94 V124"/>
+<path class="pw" data-seg="3" pathLength="1" stroke="#A9B4A0" d="M250 124 V94 Q250 70 274 70 H302 Q326 70 326 94 V124"/>
+<path class="pw" data-seg="4" pathLength="1" stroke="#9ED4E3" d="M342 124 V94 Q342 70 366 70 H394 Q418 70 418 94 V242"/>
+<path class="pw" data-seg="5" pathLength="1" stroke="#A9DCEF" d="M434 242 V94 Q434 70 458 70 H486 Q510 70 510 94 V124"/>
+<path class="pw" data-seg="6" pathLength="1" stroke="#B4E3F4" d="M526 124 V94 Q526 70 550 70 H578 Q602 70 602 94 V124"/>
+<path class="pw" data-seg="7" pathLength="1" stroke="#CDEFFC" d="M618 124 V94 Q618 70 642 70 H664 Q690 70 690 96 V200"/>
+<path class="flow" data-flow="0" d="M14 70 H26 Q50 70 50 94 V124"/>
+<path class="flow" data-flow="1" d="M66 124 V94 Q66 70 90 70 H118 Q142 70 142 94 V124"/>
+<path class="flow" data-flow="2" d="M158 124 V94 Q158 70 182 70 H210 Q234 70 234 94 V124"/>
+<path class="flow" data-flow="3" d="M250 124 V94 Q250 70 274 70 H302 Q326 70 326 94 V124"/>
+<path class="flow" data-flow="4" d="M342 124 V94 Q342 70 366 70 H394 Q418 70 418 94 V242"/>
+<path class="flow" data-flow="5" d="M434 242 V94 Q434 70 458 70 H486 Q510 70 510 94 V124"/>
+<path class="flow" data-flow="6" d="M526 124 V94 Q526 70 550 70 H578 Q602 70 602 94 V124"/>
+<path class="flow" data-flow="7" d="M618 124 V94 Q618 70 642 70 H664 Q690 70 690 96 V200"/>
 <g class="stg" data-s="0">
-<ellipse cx="60" cy="338" rx="28.8" ry="5" fill="#000" fill-opacity=".22"/>
-<use class="ph" href="#ph0"><title>PIYVO spun sediment filter</title></use>
-<g mask="url(#pm0)"><g transform="translate(0 -73.62) scale(1 1.2738)"><rect class="wl" data-cart="0" x="35.2" y="320" width="49.6" height="0" fill="#A38A60" fill-opacity=".6" style="mix-blend-mode:multiply"/></g><rect x="35.2" y="120" width="49.6" height="214" fill="url(#winShade)" opacity=".5"/></g>
+<ellipse cx="58" cy="350" rx="24.0" ry="5" fill="#000" fill-opacity=".22"/>
+<use class="ph" href="#ph0"><title>PIYVO spun (sponge) filter</title></use>
+<g mask="url(#pm0)"><g transform="translate(0 -103.52) scale(1 1.4048)"><rect class="wl" data-cart="0" x="38.0" y="320" width="40" height="0" fill="#8E7048" fill-opacity=".58" style="mix-blend-mode:multiply"/></g><rect x="38.0" y="110" width="40" height="236" fill="url(#winShade)" opacity=".5"/></g>
 </g>
 <g class="stg" data-s="1">
-<ellipse cx="165" cy="338" rx="33.3" ry="5" fill="#000" fill-opacity=".22"/>
-<use class="ph" href="#ph1"><title>PIYVO carbon filter</title></use>
-<g mask="url(#pm1)"><g transform="translate(0 -73.62) scale(1 1.2738)"><rect class="wl" data-cart="1" x="135.7" y="320" width="58.6" height="0" fill="#A9B4A0" fill-opacity=".48" style="mix-blend-mode:multiply"/></g><rect x="135.7" y="120" width="58.6" height="214" fill="url(#winShade)" opacity=".5"/></g>
+<ellipse cx="150" cy="350" rx="31.3" ry="5" fill="#000" fill-opacity=".22"/>
+<use class="ph" href="#ph1"><title>PIYVO sediment filter</title></use>
+<g mask="url(#pm1)"><g transform="translate(0 -103.52) scale(1 1.4048)"><rect class="wl" data-cart="1" x="122.7" y="320" width="54.6" height="0" fill="#A38A60" fill-opacity=".5" style="mix-blend-mode:multiply"/></g><rect x="122.7" y="110" width="54.6" height="236" fill="url(#winShade)" opacity=".5"/></g>
 </g>
 <g class="stg" data-s="2">
-<ellipse cx="270" cy="338" rx="31.6" ry="5" fill="#000" fill-opacity=".22"/>
-<use class="ph" href="#ph2"><title>PIYVO RO membrane</title></use>
-<g mask="url(#pm2)"><g transform="translate(0 -73.62) scale(1 1.2738)"><rect class="wl" data-cart="2" x="242.4" y="320" width="55.2" height="0" fill="#9ED4E3" fill-opacity=".34" style="mix-blend-mode:multiply"/></g><rect x="242.4" y="120" width="55.2" height="214" fill="url(#winShade)" opacity=".5"/></g>
+<ellipse cx="242" cy="350" rx="31.6" ry="5" fill="#000" fill-opacity=".22"/>
+<use class="ph" href="#ph2"><title>PIYVO carbon filter</title></use>
+<g mask="url(#pm2)"><g transform="translate(0 -103.52) scale(1 1.4048)"><rect class="wl" data-cart="2" x="214.4" y="320" width="55.1" height="0" fill="#A9B4A0" fill-opacity=".44" style="mix-blend-mode:multiply"/></g><rect x="214.4" y="110" width="55.1" height="236" fill="url(#winShade)" opacity=".5"/></g>
 </g>
 <g class="stg" data-s="3">
-<ellipse cx="375" cy="338" rx="55.8" ry="5" fill="#000" fill-opacity=".22"/>
-<use class="ph" href="#ph3"><title>PIYVO UF filter</title></use>
-<g mask="url(#pm3)"><g transform="translate(0 -73.62) scale(1 1.2738)"><rect class="wl" data-cart="3" x="323.2" y="320" width="103.6" height="0" fill="#A9DCEF" fill-opacity=".3" style="mix-blend-mode:multiply"/></g><rect x="323.2" y="120" width="103.6" height="214" fill="url(#winShade)" opacity=".5"/></g>
+<ellipse cx="334" cy="350" rx="25.0" ry="5" fill="#000" fill-opacity=".22"/>
+<use class="ph" href="#ph3"><title>PIYVO RO membrane</title></use>
+<g mask="url(#pm3)"><g transform="translate(0 -103.52) scale(1 1.4048)"><rect class="wl" data-cart="3" x="313.0" y="320" width="42" height="0" fill="#9ED4E3" fill-opacity=".32" style="mix-blend-mode:multiply"/></g><rect x="313.0" y="110" width="42" height="236" fill="url(#winShade)" opacity=".5"/></g>
 </g>
 <g class="stg" data-s="4">
-<ellipse cx="480" cy="338" rx="35.5" ry="5" fill="#000" fill-opacity=".22"/>
-<use class="ph" href="#ph4"><title>PIYVO copper filter</title></use>
-<g mask="url(#pm4)"><g transform="translate(0 -73.62) scale(1 1.2738)"><rect class="wl" data-cart="4" x="448.4" y="320" width="63.1" height="0" fill="#B4E3F4" fill-opacity=".26" style="mix-blend-mode:multiply"/></g><rect x="448.4" y="120" width="63.1" height="214" fill="url(#winShade)" opacity=".5"/></g>
+<ellipse cx="426" cy="350" rx="32.5" ry="5" fill="#000" fill-opacity=".22"/>
+<use class="ph" href="#ph4"><title>PIYVO UF filter (half size)</title></use>
+<g mask="url(#pm4)"><g transform="translate(0 121.24) scale(1 0.7024)"><rect class="wl" data-cart="4" x="397.5" y="320" width="57.0" height="0" fill="#A9DCEF" fill-opacity=".28" style="mix-blend-mode:multiply"/></g><rect x="397.5" y="228" width="57.0" height="118" fill="url(#winShade)" opacity=".5"/></g>
 </g>
 <g class="stg" data-s="5">
-<rect x="571" y="104" width="8" height="14" rx="2" fill="url(#capg)"/><rect x="591" y="104" width="8" height="14" rx="2" fill="url(#capg)"/>
-<rect x="553.0" y="116" width="64" height="22" rx="8" fill="url(#capg)" stroke="#9FB0BA" stroke-width=".8"/>
-<rect x="556.0" y="134" width="58" height="204" rx="14" fill="url(#bg5)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/>
-<g clip-path="url(#win5)"><rect x="568" y="152" width="34" height="168" fill="#0B2E46" fill-opacity=".55"/><rect x="568" y="152" width="34" height="168" fill="url(#m-alk)"/>
-<rect class="wl" data-cart="5" x="568" y="320" width="34" height="0" fill="#CDEFFC" fill-opacity=".72"/>
-<rect x="568" y="152" width="34" height="168" fill="url(#winShade)"/></g>
-<rect x="568" y="152" width="34" height="168" rx="9" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1"/>
-<text x="585" y="147" text-anchor="middle" class="brandtxt" fill="#0A3D62">PIYVO</text>
-<rect x="553.0" y="334" width="64" height="16" rx="6" fill="url(#capg)" stroke="#9FB0BA" stroke-width=".8"/>
+<ellipse cx="518" cy="350" rx="38.6" ry="5" fill="#000" fill-opacity=".22"/>
+<use class="ph" href="#ph5"><title>PIYVO copper filter</title></use>
+<g mask="url(#pm5)"><g transform="translate(0 -103.52) scale(1 1.4048)"><rect class="wl" data-cart="5" x="483.4" y="320" width="69.3" height="0" fill="#B4E3F4" fill-opacity=".24" style="mix-blend-mode:multiply"/></g><rect x="483.4" y="110" width="69.3" height="236" fill="url(#winShade)" opacity=".5"/></g>
 </g>
 <g class="stg" data-s="6">
+<ellipse cx="610" cy="350" rx="36.5" ry="5" fill="#000" fill-opacity=".22"/>
+<use class="ph" href="#ph6"><title>PIYVO alkaline filter</title></use>
+<g mask="url(#pm6)"><g transform="translate(0 -103.52) scale(1 1.4048)"><rect class="wl" data-cart="6" x="577.5" y="320" width="64.9" height="0" fill="#CDEFFC" fill-opacity=".2" style="mix-blend-mode:multiply"/></g><rect x="577.5" y="110" width="64.9" height="236" fill="url(#winShade)" opacity=".5"/></g>
+</g>
+<g class="stg" data-s="7">
 <rect x="682" y="196" width="16" height="170" rx="5" fill="url(#capg)"/>
 <path d="M690 200 Q690 182 710 182 H730 Q744 182 744 196 V204 H734 V198 Q734 192 728 192 H708 Q698 192 698 200 Z" fill="url(#capg)"/>
 <path class="stream" d="M739 208 V376" pathLength="1"/>
@@ -1097,25 +1158,27 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
 <path d="M708 290 L716 382 H760 L768 290" fill="none" stroke="#EAF2F5" stroke-opacity=".9" stroke-width="2" stroke-linejoin="round"/>
 <path d="M715 300 L720 372" stroke="#fff" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"/>
 </g>
-<path class="base" d="M28 392 H772"/>
-<g class="stg" data-s="0"><text class="num" x="60" y="418" text-anchor="middle">01</text><text class="lbl" x="60" y="434" text-anchor="middle">SEDIMENT</text></g>
-<g class="stg" data-s="1"><text class="num" x="165" y="418" text-anchor="middle">02</text><text class="lbl" x="165" y="434" text-anchor="middle">CARBON</text></g>
-<g class="stg" data-s="2"><text class="num" x="270" y="418" text-anchor="middle">03</text><text class="lbl" x="270" y="434" text-anchor="middle">RO MEMBRANE</text></g>
-<g class="stg" data-s="3"><text class="num" x="375" y="418" text-anchor="middle">04</text><text class="lbl" x="375" y="434" text-anchor="middle">UF</text></g>
-<g class="stg" data-s="4"><text class="num" x="480" y="418" text-anchor="middle">05</text><text class="lbl" x="480" y="434" text-anchor="middle">COPPER</text></g>
-<g class="stg" data-s="5"><text class="num" x="585" y="418" text-anchor="middle">06</text><text class="lbl" x="585" y="434" text-anchor="middle">ALKALINE</text></g>
+<path class="base" d="M24 392 H772"/>
+<g class="stg" data-s="0"><text class="num" x="58" y="418" text-anchor="middle">01</text><text class="lbl" x="58" y="434" text-anchor="middle">SPONGE</text></g>
+<g class="stg" data-s="1"><text class="num" x="150" y="418" text-anchor="middle">02</text><text class="lbl" x="150" y="434" text-anchor="middle">SEDIMENT</text></g>
+<g class="stg" data-s="2"><text class="num" x="242" y="418" text-anchor="middle">03</text><text class="lbl" x="242" y="434" text-anchor="middle">CARBON</text></g>
+<g class="stg" data-s="3"><text class="num" x="334" y="418" text-anchor="middle">04</text><text class="lbl" x="334" y="434" text-anchor="middle">MEMBRANE</text></g>
+<g class="stg" data-s="4"><text class="num" x="426" y="418" text-anchor="middle">05</text><text class="lbl" x="426" y="434" text-anchor="middle">UF</text></g>
+<g class="stg" data-s="5"><text class="num" x="518" y="418" text-anchor="middle">06</text><text class="lbl" x="518" y="434" text-anchor="middle">COPPER</text></g>
+<g class="stg" data-s="6"><text class="num" x="610" y="418" text-anchor="middle">07</text><text class="lbl" x="610" y="434" text-anchor="middle">ALKALINE</text></g>
 <text class="lbl" x="22" y="58">FEED WATER</text>
-<g class="stg" data-s="6"><text class="lbl pure" x="738" y="418" text-anchor="middle">PURE</text><text class="lbl pure" x="738" y="434" text-anchor="middle">WATER</text></g>
+<g class="stg" data-s="7"><text class="lbl pure" x="738" y="418" text-anchor="middle">PURE</text><text class="lbl pure" x="738" y="434" text-anchor="middle">WATER</text></g>
 </svg>
         </div>
         <div class="x-steps">
-          <div class="st" data-s="0"><span class="n">01</span><h3>Sediment</h3><p>A spun filter catches sand, silt and rust first, protecting every finer stage that follows.</p></div>
-          <div class="st" data-s="1"><span class="n">02</span><h3>Carbon</h3><p>Activated carbon helps reduce chlorine, odour and some organic impurities.</p></div>
-          <div class="st" data-s="2"><span class="n">03</span><h3>RO Membrane</h3><p>A semi-permeable membrane reduces dissolved salts and many dissolved impurities. This is where the biggest change happens.</p></div>
-          <div class="st" data-s="3"><span class="n">04</span><h3>UF</h3><p>Ultrafiltration hollow fibres hold back fine particles and many microorganisms.</p></div>
-          <div class="st" data-s="4"><span class="n">05</span><h3>Copper</h3><p>A copper stage, found in many purifiers made for Indian homes.</p></div>
-          <div class="st" data-s="5"><span class="n">06</span><h3>Alkaline</h3><p>A mineral stage that adds minerals back and can raise pH, for a balanced taste.</p></div>
-          <div class="st" data-s="6"><span class="n">✓</span><h3>Pure water.</h3><p>Clear, fresh water for your family. Stages vary by purifier, so we check what your system has and what your water needs.</p><a class="btn btn-primary" href="#book" style="margin-top:1.4rem;align-self:flex-start">Book a Service</a></div>
+          <div class="st" data-s="0"><span class="n">01</span><h3>Sponge</h3><p>A spun sponge filter is the first line of defence, catching sand, silt and rust before anything else.</p></div>
+          <div class="st" data-s="1"><span class="n">02</span><h3>Sediment</h3><p>The inline sediment filter removes the finer suspended dirt the sponge lets through.</p></div>
+          <div class="st" data-s="2"><span class="n">03</span><h3>Carbon</h3><p>Activated carbon helps reduce chlorine, odour, colour and some organic impurities.</p></div>
+          <div class="st" data-s="3"><span class="n">04</span><h3>RO Membrane</h3><p>A semi-permeable membrane reduces dissolved salts and many dissolved impurities. This is where the biggest change happens.</p></div>
+          <div class="st" data-s="4"><span class="n">05</span><h3>UF</h3><p>A compact, half-size ultrafiltration cartridge holds back fine particles and many microorganisms.</p></div>
+          <div class="st" data-s="5"><span class="n">06</span><h3>Copper</h3><p>A copper stage, found in many purifiers made for Indian homes.</p></div>
+          <div class="st" data-s="6"><span class="n">07</span><h3>Alkaline</h3><p>A mineral stage that adds minerals back and can raise pH, for a balanced taste.</p></div>
+          <div class="st" data-s="7"><span class="n">✓</span><h3>Pure water.</h3><p>Clear, fresh water for your family. Stages vary by purifier, so we check what your system has and what your water needs.</p><a class="btn btn-primary" href="#book" style="margin-top:1.4rem;align-self:flex-start">Book a Service</a></div>
         </div>
       </div>
     </div>
@@ -1137,7 +1200,7 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
           </svg>
           <figcaption><strong>Before</strong><span>Feed water</span></figcaption>
         </figure>
-        <div class="x-arrow" aria-hidden="true"><span>6 stages</span><svg viewBox="0 0 60 20"><path d="M2 10 H54 M46 3 L55 10 L46 17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="x-arrow" aria-hidden="true"><span>7 stages</span><svg viewBox="0 0 60 20"><path d="M2 10 H54 M46 3 L55 10 L46 17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <figure>
           <svg viewBox="0 0 200 250" role="img" aria-label="Glass of clear, fresh purified water with small rising bubbles">
             <defs><clipPath id="gcB"><path d="M42 40 L56 226 H144 L158 40 Z"/></clipPath><linearGradient id="wB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E6F8FE"/><stop offset="1" stop-color="#8CD2EE"/></linearGradient></defs>
@@ -1148,7 +1211,7 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
             <path d="M50 44 L62 214" stroke="#fff" stroke-opacity=".6" stroke-width="4" stroke-linecap="round"/>
             <path class="spark" d="M150 22 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z" fill="#9FF0E4"/>
           </svg>
-          <figcaption><strong>After</strong><span>Six-stage purified</span></figcaption>
+          <figcaption><strong>After</strong><span>Seven-stage purified</span></figcaption>
         </figure>
       </div>
       <p class="x-note">Illustration only. Actual results depend on your water source, your purifier and the condition of its filters.</p>
@@ -1199,7 +1262,7 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
         <a class="tile t-light t-img rv" href="#piyvo">
           <p class="x-kicker">PIYVO filters</p>
           <h3>Genuine parts for every stage.</h3>
-          <img src="img/filters/hamper-3.jpg" alt="PIYVO Hamper 3 filter kit" loading="lazy" width="640" height="640">
+          <img src="img/parts/hamper-3.jpg" alt="PIYVO Hamper 3 filter kit" loading="lazy" width="640" height="640">
         </a>
         <a class="tile t-sand rv wa-general" href="https://wa.me/918955058746" target="_blank" rel="noopener">
           <p class="x-kicker">Booking</p>
@@ -1798,10 +1861,10 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
     <div class="wrap">
       <div class="sec-head"><span class="eyebrow">The Signature range</span><h2>Choose the finish that suits your kitchen.</h2><p class="lede">Ask us about specifications, suitability for your water and current availability before you decide.</p></div>
       <div class="prod-grid">
-        <article class="prod rv"><div class="ph"><img src="img/piyvo-orange.jpg" alt="PIYVO Signature water purifier in white with a copper-orange accent" loading="lazy" width="700" height="845"></div><div class="pb"><span class="line">PIYVO Signature</span><h3><span class="swatch" style="background:#D9752F"></span>Copper accent</h3><p>Clean white body with an indicator display, touch controls and a visible tank-level window.</p><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20am%20interested%20in%20the%20PIYVO%20Signature%20water%20purifier%20%28Copper%20accent%29.%20Please%20share%20details%20and%20availability." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></article>
+        <article class="prod rv"><div class="ph"><img src="img/piyvo-orange.jpg" alt="PIYVO Signature water purifier in white with a copper-orange accent" loading="lazy" width="700" height="845"></div><div class="pb"><span class="line">PIYVO Signature</span><h3><span class="swatch" style="background:#D9752F"></span>Copper accent</h3><p>Clean white body with an indicator display, touch controls and a visible tank-level window.</p><p class="pr">₹6,000 – 6,500</p><div class="btn-row" style="margin-top:auto;gap:.5rem"><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20am%20interested%20in%20the%20PIYVO%20Signature%20water%20purifier%20%28Copper%20accent%29.%20Please%20share%20details%20and%20availability." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a><a class="btn btn-primary btn-sm" href="#shop" data-goto="shop-purifiers">Buy</a></div></div></article>
         <article class="prod rv"><div class="ph"><img src="img/piyvo-black.jpg" alt="PIYVO Signature water purifier in white with a graphite-black accent" loading="lazy" width="700" height="845"></div><div class="pb"><span class="line">PIYVO Signature</span><h3><span class="swatch" style="background:#2B2B2B"></span>Graphite accent</h3><p>The same Signature design in an understated graphite finish for modern kitchens.</p><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20am%20interested%20in%20the%20PIYVO%20Signature%20water%20purifier%20%28Graphite%20accent%29.%20Please%20share%20details%20and%20availability." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></article>
-        <article class="prod rv"><div class="ph"><img src="img/piyvo-blue.jpg" alt="PIYVO Signature water purifier in white with an azure-blue accent" loading="lazy" width="700" height="845"></div><div class="pb"><span class="line">PIYVO Signature</span><h3><span class="swatch" style="background:#4A90D9"></span>Azure accent</h3><p>A fresh blue accent with indicator display, touch controls and tank-level window.</p><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20am%20interested%20in%20the%20PIYVO%20Signature%20water%20purifier%20%28Azure%20accent%29.%20Please%20share%20details%20and%20availability." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></article>
-        <article class="prod rv"><div class="ph"><img src="img/piyvo-dark.jpg" alt="PIYVO Signature water purifier in a dark finish with a transparent storage tank" loading="lazy" width="700" height="845"></div><div class="pb"><span class="line">PIYVO Signature</span><h3><span class="swatch" style="background:#3A3D40"></span>Dark edition, clear tank</h3><p>A dark, contemporary body with a transparent storage tank so you can see your water.</p><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20am%20interested%20in%20the%20PIYVO%20Signature%20water%20purifier%20%28Dark%20edition%2C%20clear%20tank%29.%20Please%20share%20details%20and%20availability." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></article>
+        <article class="prod rv"><div class="ph"><img src="img/piyvo-blue.jpg" alt="PIYVO Signature water purifier in white with an azure-blue accent" loading="lazy" width="700" height="845"></div><div class="pb"><span class="line">PIYVO Signature</span><h3><span class="swatch" style="background:#4A90D9"></span>Azure accent</h3><p>A fresh blue accent with indicator display, touch controls and tank-level window.</p><p class="pr">₹6,000 – 6,500</p><div class="btn-row" style="margin-top:auto;gap:.5rem"><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20am%20interested%20in%20the%20PIYVO%20Signature%20water%20purifier%20%28Azure%20accent%29.%20Please%20share%20details%20and%20availability." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a><a class="btn btn-primary btn-sm" href="#shop" data-goto="shop-purifiers">Buy</a></div></div></article>
+        <article class="prod rv"><div class="ph"><img src="img/piyvo-dark.jpg" alt="PIYVO Signature water purifier in a dark finish with a transparent storage tank" loading="lazy" width="700" height="845"></div><div class="pb"><span class="line">PIYVO Signature</span><h3><span class="swatch" style="background:#3A3D40"></span>Dark edition, clear tank</h3><p>A dark, contemporary body with a transparent storage tank so you can see your water.</p><p class="pr">₹8,500</p><div class="btn-row" style="margin-top:auto;gap:.5rem"><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20am%20interested%20in%20the%20PIYVO%20Signature%20water%20purifier%20%28Dark%20edition%2C%20clear%20tank%29.%20Please%20share%20details%20and%20availability." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a><a class="btn btn-primary btn-sm" href="#shop" data-goto="shop-purifiers">Buy</a></div></div></article>
       </div>
       <p class="prod-note">Product images show design and finish. Specifications and availability are shared on enquiry, and we will recommend a PIYVO model only if it suits your water.</p>
     </div>
@@ -1809,14 +1872,18 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
 
   <section class="band band-sand">
     <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">PIYVO filters &amp; spares</span><h2>Genuine replacement filters for every stage.</h2><p class="lede">Made by our family's manufacturing business and fitted by RIVSEVA technicians. The MRP shown on each pack is inclusive of all taxes; installation is quoted separately.</p></div>
+      <div class="sec-head"><span class="eyebrow">PIYVO components</span><h2>Genuine replacement filters for every stage.</h2><p class="lede">Made by our family's manufacturing business and fitted by RIVSEVA technicians. Order online for delivery within 3 hours, or ask us on WhatsApp. Fitting is quoted separately.</p></div>
       <div class="grid-3">
-        <article class="flt rv"><img src="img/filters/spun.jpg" alt="PIYVO Spun Filter pack" loading="lazy" width="640" height="640"><div class="fb"><span class="stage">Stage 01 · Sediment</span><h3>PIYVO Spun Filter</h3><p>Spun sediment filter that traps sand, rust and suspended particles first.</p><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Spun%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></article>
-        <article class="flt rv"><img src="img/filters/hamper-3.jpg" alt="PIYVO Hamper 3 Filter Kit pack" loading="lazy" width="640" height="640"><div class="fb"><span class="stage">Stages 01, 02 &amp; 05</span><h3>PIYVO Hamper 3 Filter Kit</h3><p>A set of spun sediment, carbon and copper filters for a routine change.</p><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Hamper%203%20Filter%20Kit.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></article>
-        <article class="flt rv"><img src="img/filters/ro-membrane.jpg" alt="PIYVO RO Membrane pack" loading="lazy" width="640" height="640"><div class="fb"><span class="stage">Stage 03 · RO</span><h3>PIYVO RO Membrane</h3><p>Reverse-osmosis membrane that reduces dissolved salts.</p><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20RO%20Membrane.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></article>
-        <article class="flt rv"><img src="img/filters/uf.jpg" alt="PIYVO Ultra Filtration Filter pack" loading="lazy" width="640" height="640"><div class="fb"><span class="stage">Stage 04 · UF</span><h3>PIYVO Ultra Filtration Filter</h3><p>UF membrane for suspended particles and microorganisms.</p><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Ultra%20Filtration%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></article>
-        <article class="flt rv"><img src="img/filters/copper.jpg" alt="PIYVO Copper Filter pack" loading="lazy" width="640" height="640"><div class="fb"><span class="stage">Stage 05 · Copper</span><h3>PIYVO Copper Filter</h3><p>The copper stage of the PIYVO filter range.</p><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Copper%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></article>
-        <article class="flt rv"><img src="img/filters/b12.jpg" alt="PIYVO B12 Water Filter pack" loading="lazy" width="640" height="640"><div class="fb"><span class="stage">Add-on</span><h3>PIYVO B12 Water Filter</h3><p>An add-on filter from the PIYVO range. Ask us about compatibility.</p><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20B12%20Water%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a></div></article>
+        <article class="flt rv"><a class="fimg" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Spun%20%28Sponge%29%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Spun (Sponge) Filter on WhatsApp"><img src="img/parts/spun.jpg" alt="PIYVO Spun (Sponge) Filter" loading="lazy" width="800" height="800"></a><div class="fb"><span class="stage">Stage 01 · Sponge</span><h3>PIYVO Spun (Sponge) Filter</h3><p>The first stage: a spun sponge filter that traps sand, rust and dirt.</p><p class=pr>₹200</p><div class="btns"><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Spun%20%28Sponge%29%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a><a class="btn btn-primary btn-sm" href="#shop" data-goto="shop-parts">Buy</a></div></div></article>
+        <article class="flt rv"><a class="fimg" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Sediment%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Sediment Filter on WhatsApp"><img src="img/parts/sediment.jpg" alt="PIYVO Sediment Filter" loading="lazy" width="800" height="800"></a><div class="fb"><span class="stage">Stage 02 · Sediment</span><h3>PIYVO Sediment Filter</h3><p>Inline sediment filter for the finer suspended dirt, sand and rust.</p><p class=pr>₹550</p><div class="btns"><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Sediment%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a><a class="btn btn-primary btn-sm" href="#shop" data-goto="shop-parts">Buy</a></div></div></article>
+        <article class="flt rv"><a class="fimg" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Carbon%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Carbon Filter on WhatsApp"><img src="img/parts/carbon.jpg" alt="PIYVO Carbon Filter" loading="lazy" width="800" height="800"></a><div class="fb"><span class="stage">Stage 03 · Carbon</span><h3>PIYVO Carbon Filter</h3><p>Inline carbon filter for chlorine, odour, colour and organic contaminants.</p><p class=pr>₹550</p><div class="btns"><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Carbon%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a><a class="btn btn-primary btn-sm" href="#shop" data-goto="shop-parts">Buy</a></div></div></article>
+        <article class="flt rv"><a class="fimg" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20RO%20Membrane.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO RO Membrane on WhatsApp"><img src="img/parts/ro.jpg" alt="PIYVO RO Membrane" loading="lazy" width="800" height="800"></a><div class="fb"><span class="stage">Stage 04 · RO</span><h3>PIYVO RO Membrane</h3><p>Reverse-osmosis membrane that reduces dissolved salts.</p><div class="btns"><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20RO%20Membrane.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a><a class="btn btn-primary btn-sm" href="#shop" data-goto="shop-parts">Buy</a></div></div></article>
+        <article class="flt rv"><a class="fimg" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20UF%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO UF Filter on WhatsApp"><img src="img/parts/uf.jpg" alt="PIYVO UF Filter" loading="lazy" width="800" height="800"></a><div class="fb"><span class="stage">Stage 05 · UF</span><h3>PIYVO UF Filter</h3><p>Half-size ultra filtration cartridge for fine particles and microorganisms.</p><p class=pr>₹550</p><div class="btns"><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20UF%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a><a class="btn btn-primary btn-sm" href="#shop" data-goto="shop-parts">Buy</a></div></div></article>
+        <article class="flt rv"><a class="fimg" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Copper%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Copper Filter on WhatsApp"><img src="img/parts/copper.jpg" alt="PIYVO Copper Filter" loading="lazy" width="800" height="800"></a><div class="fb"><span class="stage">Stage 06 · Copper</span><h3>PIYVO Copper Filter</h3><p>The copper stage of the PIYVO range.</p><p class=pr>₹550</p><div class="btns"><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Copper%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a><a class="btn btn-primary btn-sm" href="#shop" data-goto="shop-parts">Buy</a></div></div></article>
+        <article class="flt rv"><a class="fimg" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Alkaline%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Alkaline Filter on WhatsApp"><img src="img/parts/alkaline.jpg" alt="PIYVO Alkaline Filter" loading="lazy" width="800" height="800"></a><div class="fb"><span class="stage">Stage 07 · Alkaline</span><h3>PIYVO Alkaline Filter</h3><p>The final alkaline stage before your glass.</p><p class=pr>₹550</p><div class="btns"><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Alkaline%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a><a class="btn btn-primary btn-sm" href="#shop" data-goto="shop-parts">Buy</a></div></div></article>
+        <article class="flt rv"><a class="fimg" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Diaphragm%20Booster%20Pump.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Diaphragm Booster Pump on WhatsApp"><img src="img/parts/pump.jpg" alt="PIYVO Diaphragm Booster Pump" loading="lazy" width="800" height="800"></a><div class="fb"><span class="stage">RO component</span><h3>PIYVO Diaphragm Booster Pump</h3><p>100 GPD, 24 V DC diaphragm booster pump for RO purifiers.</p><p class=pr>₹1,500</p><div class="btns"><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Diaphragm%20Booster%20Pump.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a><a class="btn btn-primary btn-sm" href="#shop" data-goto="shop-parts">Buy</a></div></div></article>
+        <article class="flt rv"><a class="fimg" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20B12%20Water%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO B12 Water Filter on WhatsApp"><img src="img/parts/b12.jpg" alt="PIYVO B12 Water Filter" loading="lazy" width="800" height="800"></a><div class="fb"><span class="stage">Add-on</span><h3>PIYVO B12 Water Filter</h3><p>An add-on filter from the PIYVO range. Ask us about compatibility.</p><div class="btns"><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20B12%20Water%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a><a class="btn btn-primary btn-sm" href="#shop" data-goto="shop-parts">Buy</a></div></div></article>
+        <article class="flt rv"><a class="fimg" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Hamper%203%20Filter%20Kit.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Hamper 3 Filter Kit on WhatsApp"><img src="img/parts/hamper-3.jpg" alt="PIYVO Hamper 3 Filter Kit" loading="lazy" width="800" height="800"></a><div class="fb"><span class="stage">Sponge, carbon &amp; copper</span><h3>PIYVO Hamper 3 Filter Kit</h3><p>Spun sponge, carbon and copper filters together for a routine change.</p><div class="btns"><a class="btn btn-outline btn-sm" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Hamper%203%20Filter%20Kit.%20Please%20share%20the%20details." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire</a><a class="btn btn-primary btn-sm" href="#shop" data-goto="shop-parts">Buy</a></div></div></article>
       </div>
       <p class="prod-note">Which filters your purifier needs depends on its design and your water. We check compatibility before recommending a replacement.</p>
     </div>
@@ -1856,6 +1923,72 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
       </div>
     </div>
   </section>
+</section>
+
+<!-- ===================== SHOP ===================== -->
+<section class="view" data-route="shop" tabindex="-1" aria-label="Shop RO parts and PIYVO purifiers" hidden>
+  <div class="page-hero">
+    <div class="wrap page-hero-grid">
+      <div>
+        <p class="crumbs"><a href="#home">Home</a> / Shop</p>
+        <span class="eyebrow">Shop PIYVO</span>
+        <h1>RO parts and purifiers, delivered in 3 hours.</h1>
+        <p class="lede">Order genuine PIYVO filters, spares and Signature purifiers straight from the maker. Add what you need, send the order on WhatsApp, and we deliver within 3 hours.</p>
+        <ul class="shop-perks"><li><svg><use href="#i-clock"/></svg>3-hour delivery</li><li><svg><use href="#i-check"/></svg>Genuine PIYVO</li><li><svg><use href="#i-wa"/></svg>Order on WhatsApp</li></ul>
+        <div class="btn-row" style="margin-top:1.4rem"><a class="btn btn-primary" href="#shop" data-scroll="shop-parts">Shop filters &amp; spares</a><a class="btn btn-ghost" href="#shop" data-scroll="shop-purifiers">See purifiers</a></div>
+      </div>
+      <div class="shop-hero-img"><img src="img/parts/all-stages.jpg" alt="The seven PIYVO filter stages: spun sponge, sediment, carbon, RO membrane, half-size UF, copper and alkaline" width="1280" height="720"></div>
+    </div>
+  </div>
+
+  <section class="band" id="shop-parts">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Filters &amp; spares</span><h2>Every stage, ready to fit.</h2><p class="lede">Pick the filters your purifier needs. Not sure which one? Send us a photo of your purifier on WhatsApp and we will tell you.</p></div>
+      <div class="shop-grid parts">
+<article class="sp part rv" data-id="spun" data-name="PIYVO Spun (Sponge) Filter" data-price='[200, 200]'><a class="im" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Spun%20%28Sponge%29%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Spun (Sponge) Filter on WhatsApp"><img src="img/parts/spun.jpg" alt="PIYVO Spun (Sponge) Filter" loading="lazy" width="800" height="800"></a><div class="bd"><span class="tag">Stage 01 · Sponge</span><h3>PIYVO Spun (Sponge) Filter</h3><p>The first stage: a spun sponge filter that traps sand, rust and dirt.</p><div class="price">₹200</div><div class="act"><button type="button" class="btn btn-primary btn-sm add">Add to order</button><span class="qty" hidden><button type="button" class="dec" aria-label="One less">−</button><output>0</output><button type="button" class="inc" aria-label="One more">+</button></span></div></div></article>
+<article class="sp part rv" data-id="sediment" data-name="PIYVO Sediment Filter" data-price='[550, 550]'><a class="im" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Sediment%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Sediment Filter on WhatsApp"><img src="img/parts/sediment.jpg" alt="PIYVO Sediment Filter" loading="lazy" width="800" height="800"></a><div class="bd"><span class="tag">Stage 02 · Sediment</span><h3>PIYVO Sediment Filter</h3><p>Inline sediment filter for the finer suspended dirt, sand and rust.</p><div class="price">₹550</div><div class="act"><button type="button" class="btn btn-primary btn-sm add">Add to order</button><span class="qty" hidden><button type="button" class="dec" aria-label="One less">−</button><output>0</output><button type="button" class="inc" aria-label="One more">+</button></span></div></div></article>
+<article class="sp part rv" data-id="carbon" data-name="PIYVO Carbon Filter" data-price='[550, 550]'><a class="im" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Carbon%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Carbon Filter on WhatsApp"><img src="img/parts/carbon.jpg" alt="PIYVO Carbon Filter" loading="lazy" width="800" height="800"></a><div class="bd"><span class="tag">Stage 03 · Carbon</span><h3>PIYVO Carbon Filter</h3><p>Inline carbon filter for chlorine, odour, colour and organic contaminants.</p><div class="price">₹550</div><div class="act"><button type="button" class="btn btn-primary btn-sm add">Add to order</button><span class="qty" hidden><button type="button" class="dec" aria-label="One less">−</button><output>0</output><button type="button" class="inc" aria-label="One more">+</button></span></div></div></article>
+<article class="sp part rv" data-id="ro" data-name="PIYVO RO Membrane" data-price='null'><a class="im" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20RO%20Membrane.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO RO Membrane on WhatsApp"><img src="img/parts/ro.jpg" alt="PIYVO RO Membrane" loading="lazy" width="800" height="800"></a><div class="bd"><span class="tag">Stage 04 · RO</span><h3>PIYVO RO Membrane</h3><p>Reverse-osmosis membrane that reduces dissolved salts.</p><div class="price">Price on WhatsApp</div><div class="act"><button type="button" class="btn btn-primary btn-sm add">Add to order</button><span class="qty" hidden><button type="button" class="dec" aria-label="One less">−</button><output>0</output><button type="button" class="inc" aria-label="One more">+</button></span></div></div></article>
+<article class="sp part rv" data-id="uf" data-name="PIYVO UF Filter" data-price='[550, 550]'><a class="im" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20UF%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO UF Filter on WhatsApp"><img src="img/parts/uf.jpg" alt="PIYVO UF Filter" loading="lazy" width="800" height="800"></a><div class="bd"><span class="tag">Stage 05 · UF</span><h3>PIYVO UF Filter</h3><p>Half-size ultra filtration cartridge for fine particles and microorganisms.</p><div class="price">₹550</div><div class="act"><button type="button" class="btn btn-primary btn-sm add">Add to order</button><span class="qty" hidden><button type="button" class="dec" aria-label="One less">−</button><output>0</output><button type="button" class="inc" aria-label="One more">+</button></span></div></div></article>
+<article class="sp part rv" data-id="copper" data-name="PIYVO Copper Filter" data-price='[550, 550]'><a class="im" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Copper%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Copper Filter on WhatsApp"><img src="img/parts/copper.jpg" alt="PIYVO Copper Filter" loading="lazy" width="800" height="800"></a><div class="bd"><span class="tag">Stage 06 · Copper</span><h3>PIYVO Copper Filter</h3><p>The copper stage of the PIYVO range.</p><div class="price">₹550</div><div class="act"><button type="button" class="btn btn-primary btn-sm add">Add to order</button><span class="qty" hidden><button type="button" class="dec" aria-label="One less">−</button><output>0</output><button type="button" class="inc" aria-label="One more">+</button></span></div></div></article>
+<article class="sp part rv" data-id="alkaline" data-name="PIYVO Alkaline Filter" data-price='[550, 550]'><a class="im" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Alkaline%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Alkaline Filter on WhatsApp"><img src="img/parts/alkaline.jpg" alt="PIYVO Alkaline Filter" loading="lazy" width="800" height="800"></a><div class="bd"><span class="tag">Stage 07 · Alkaline</span><h3>PIYVO Alkaline Filter</h3><p>The final alkaline stage before your glass.</p><div class="price">₹550</div><div class="act"><button type="button" class="btn btn-primary btn-sm add">Add to order</button><span class="qty" hidden><button type="button" class="dec" aria-label="One less">−</button><output>0</output><button type="button" class="inc" aria-label="One more">+</button></span></div></div></article>
+<article class="sp part rv" data-id="pump" data-name="PIYVO Diaphragm Booster Pump" data-price='[1500, 1500]'><a class="im" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Diaphragm%20Booster%20Pump.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Diaphragm Booster Pump on WhatsApp"><img src="img/parts/pump.jpg" alt="PIYVO Diaphragm Booster Pump" loading="lazy" width="800" height="800"></a><div class="bd"><span class="tag">RO component</span><h3>PIYVO Diaphragm Booster Pump</h3><p>100 GPD, 24 V DC diaphragm booster pump for RO purifiers.</p><div class="price">₹1,500</div><div class="act"><button type="button" class="btn btn-primary btn-sm add">Add to order</button><span class="qty" hidden><button type="button" class="dec" aria-label="One less">−</button><output>0</output><button type="button" class="inc" aria-label="One more">+</button></span></div></div></article>
+<article class="sp part rv" data-id="b12" data-name="PIYVO B12 Water Filter" data-price='null'><a class="im" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20B12%20Water%20Filter.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO B12 Water Filter on WhatsApp"><img src="img/parts/b12.jpg" alt="PIYVO B12 Water Filter" loading="lazy" width="800" height="800"></a><div class="bd"><span class="tag">Add-on</span><h3>PIYVO B12 Water Filter</h3><p>An add-on filter from the PIYVO range. Ask us about compatibility.</p><div class="price">Price on WhatsApp</div><div class="act"><button type="button" class="btn btn-primary btn-sm add">Add to order</button><span class="qty" hidden><button type="button" class="dec" aria-label="One less">−</button><output>0</output><button type="button" class="inc" aria-label="One more">+</button></span></div></div></article>
+<article class="sp part rv" data-id="hamper-3" data-name="PIYVO Hamper 3 Filter Kit" data-price='null'><a class="im" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Hamper%203%20Filter%20Kit.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Hamper 3 Filter Kit on WhatsApp"><img src="img/parts/hamper-3.jpg" alt="PIYVO Hamper 3 Filter Kit" loading="lazy" width="800" height="800"></a><div class="bd"><span class="tag">Sponge, carbon &amp; copper</span><h3>PIYVO Hamper 3 Filter Kit</h3><p>Spun sponge, carbon and copper filters together for a routine change.</p><div class="price">Price on WhatsApp</div><div class="act"><button type="button" class="btn btn-primary btn-sm add">Add to order</button><span class="qty" hidden><button type="button" class="dec" aria-label="One less">−</button><output>0</output><button type="button" class="inc" aria-label="One more">+</button></span></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-sand" id="shop-purifiers">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">PIYVO Signature purifiers</span><h2>Made by our family. Delivered by us.</h2><p class="lede">Ask us about specifications and suitability for your water before you order.</p></div>
+      <div class="shop-grid">
+<article class="sp mach rv" data-id="sig-blue" data-name="PIYVO Signature, Azure blue" data-price='[6000, 6500]'><a class="im" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Signature%2C%20Azure%20blue.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Signature, Azure blue on WhatsApp"><img src="img/piyvo-blue.jpg" alt="PIYVO Signature, Azure blue water purifier" loading="lazy" width="800" height="800"></a><div class="bd"><span class="tag">PIYVO Signature purifier</span><h3>PIYVO Signature, Azure blue</h3><p>White body with an azure-blue accent, indicator display and touch controls.</p><div class="price">₹6,000 – 6,500 <small>approx.</small></div><div class="act"><button type="button" class="btn btn-primary btn-sm add">Add to order</button><span class="qty" hidden><button type="button" class="dec" aria-label="One less">−</button><output>0</output><button type="button" class="inc" aria-label="One more">+</button></span></div></div></article>
+<article class="sp mach rv" data-id="sig-orange" data-name="PIYVO Signature, Copper orange" data-price='[6000, 6500]'><a class="im" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Signature%2C%20Copper%20orange.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Signature, Copper orange on WhatsApp"><img src="img/piyvo-orange.jpg" alt="PIYVO Signature, Copper orange water purifier" loading="lazy" width="800" height="800"></a><div class="bd"><span class="tag">PIYVO Signature purifier</span><h3>PIYVO Signature, Copper orange</h3><p>White body with a copper-orange accent, indicator display and touch controls.</p><div class="price">₹6,000 – 6,500 <small>approx.</small></div><div class="act"><button type="button" class="btn btn-primary btn-sm add">Add to order</button><span class="qty" hidden><button type="button" class="dec" aria-label="One less">−</button><output>0</output><button type="button" class="inc" aria-label="One more">+</button></span></div></div></article>
+<article class="sp mach rv" data-id="sig-black" data-name="PIYVO Signature, Full black" data-price='[8500, 8500]'><a class="im" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20enquire%20about%20the%20PIYVO%20Signature%2C%20Full%20black.%20Please%20share%20the%20details." target="_blank" rel="noopener" aria-label="Enquire about the PIYVO Signature, Full black on WhatsApp"><img src="img/piyvo-dark.jpg" alt="PIYVO Signature, Full black water purifier" loading="lazy" width="800" height="800"></a><div class="bd"><span class="tag">PIYVO Signature purifier</span><h3>PIYVO Signature, Full black</h3><p>All-black body with a clear storage tank and a chrome tap.</p><div class="price">₹8,500</div><div class="act"><button type="button" class="btn btn-primary btn-sm add">Add to order</button><span class="qty" hidden><button type="button" class="dec" aria-label="One less">−</button><output>0</output><button type="button" class="inc" aria-label="One more">+</button></span></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="shop-order">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Your order</span><h2>Review and send on WhatsApp.</h2></div>
+      <div class="order">
+        <div class="order-list" aria-live="polite"><ul id="order-items"></ul><p class="empty" id="order-empty">Your order is empty. Add filters, spares or a purifier above.</p><div class="tot" id="order-tot" hidden><span>Estimated total</span><span id="order-sum"></span></div></div>
+        <form class="order-form" id="order-form" novalidate>
+          <label for="or-name">Your name</label><input id="or-name" autocomplete="name" required>
+          <label for="or-phone">Phone number</label><input id="or-phone" type="tel" autocomplete="tel" inputmode="tel" required>
+          <label for="or-addr">Delivery address</label><textarea id="or-addr" rows="3" autocomplete="street-address" required></textarea>
+          <label for="or-note">Anything else? (optional)</label><input id="or-note" placeholder="For example: purifier model, or fit it for me">
+          <button class="btn btn-primary" type="submit"><svg><use href="#i-wa"/></svg>Send order on WhatsApp</button>
+          <p class="err" id="order-err" hidden></p>
+          <div class="order-ready" id="order-ready" hidden><p>Your order message is ready. WhatsApp should open with it. If it did not, use one of these:</p><div class="btn-row"><a class="btn btn-primary btn-sm" id="order-wa" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Open WhatsApp</a><button class="btn btn-outline btn-sm" type="button" id="order-copy"><svg><use href="#i-copy"/></svg>Copy message</button></div></div>
+        </form>
+      </div>
+      <p class="shop-note">Prices are in Indian rupees. We confirm stock, the final price and your delivery time on WhatsApp before we dispatch. 3-hour delivery covers our Gurugram service area. Fitting, if you want it, is quoted separately.</p>
+    </div>
+  </section>
+  <div class="order-bar" id="order-bar" aria-live="polite"><span><b id="ob-count">0 items</b><span id="ob-sum"></span></span><a class="btn btn-primary" href="#shop" data-scroll="shop-order">Review order</a></div>
 </section>
 
 <!-- ===================== BLOG ===================== -->
@@ -2140,6 +2273,7 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
         <p class="ft-h">Services</p>
         <ul class="ft-links">
           <li><a href="#services">All services</a></li>
+          <li><a href="#shop">Shop filters &amp; purifiers</a></li>
           <li><a href="#piyvo">PIYVO purifiers</a></li>
           <li><a href="#ro-service">RO service in Gurugram</a></li>
           <li><a href="#society-amc">Society AMC</a></li>
@@ -2223,6 +2357,7 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
     "contact": ["Contact RIVSEVA | Book RO Service in Gurugram","Call or WhatsApp +91 89550 58746 to book RO service in Gurugram, or send a service enquiry."],
     "ro-service": ["Water Purifier Service & Repair in Gurugram | RIVSEVA","Low flow, leaks or odd taste? Book RO service in Gurugram on WhatsApp. Transparent quotations before any chargeable work."],
     "faq": ["RO Service FAQs | RIVSEVA Gurugram","How often to service an RO, what affects charges, when to replace a membrane, and more."],
+    "shop": ["Shop RO Filters, Spares & PIYVO Purifiers | 3-Hour Delivery | RIVSEVA","Order genuine PIYVO RO filters, spares and Signature purifiers with delivery within 3 hours in Gurugram. Order on WhatsApp."],
     "piyvo": ["PIYVO Water Purifiers | Direct from the Manufacturer | RIVSEVA","PIYVO Signature water purifiers, our own brand, manufactured directly by our family business and serviced by RIVSEVA in Gurugram."],
     "blog": ["RO & Water Care Blog | RIVSEVA Gurugram","Practical articles on RO servicing, TDS, membranes, choosing a purifier, reject water and society AMCs."],
     "blog-service-frequency": ["How Often Should You Service Your RO Purifier? | RIVSEVA","Why the right RO service interval depends on your water source, usage and purifier design."],
@@ -2391,7 +2526,7 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
   function activate(s){
     story.classList.add("has-active");
     steps.forEach(function(e){ e.classList.toggle("on", e.dataset.s === s); });
-    stg.forEach(function(e){ e.classList.toggle("on", e.dataset.s === s || (s === "6")); });
+    stg.forEach(function(e){ e.classList.toggle("on", e.dataset.s === s || (s === "7")); });
   }
   if ("IntersectionObserver" in window){
     var io = new IntersectionObserver(function(en){ en.forEach(function(x){ if (x.isIntersecting) activate(x.target.dataset.s); }); }, {rootMargin:"-45% 0px -45% 0px"});
@@ -2406,8 +2541,8 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
   var segs = svg.querySelectorAll(".pw"), flows = svg.querySelectorAll(".flow"), carts = svg.querySelectorAll(".wl");
   var stream = svg.querySelector(".stream"), glass = svg.querySelector(".gl");
   var seq = [];
-  for (var i = 0; i < 6; i++){ seq.push(["s", i]); seq.push(["c", i]); }
-  seq.push(["s", 6]); seq.push(["r", 0]); seq.push(["g", 0]);
+  for (var i = 0; i < 7; i++){ seq.push(["s", i]); seq.push(["c", i]); }
+  seq.push(["s", 7]); seq.push(["r", 0]); seq.push(["g", 0]);
   var D = 700, HOLD = 2600, T = seq.length * D + HOLD;
   function lv(k, t){ return Math.max(0, Math.min(1, (t - k * D) / D)); }
   function draw(t){
@@ -2432,5 +2567,67 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
 })();
 </script>
 <script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){});});}</script>
+<script>
+(function(){
+  var page = document.querySelector('[data-route="shop"]'); if (!page) return;
+  var cart = {}; try { cart = JSON.parse(localStorage.getItem("rivseva-cart") || "{}") || {}; } catch(e){ cart = {}; }
+  var cards = page.querySelectorAll(".sp");
+  var byId = {}; cards.forEach(function(c){ byId[c.dataset.id] = {name:c.dataset.name, price:JSON.parse(c.dataset.price), el:c}; });
+  function inr(v){ return "₹" + v.toLocaleString("en-IN"); }
+  function range(a,b){ return a === b ? inr(a) : inr(a) + " – " + b.toLocaleString("en-IN"); }
+  function save(){ try { localStorage.setItem("rivseva-cart", JSON.stringify(cart)); } catch(e){} }
+  function totals(){
+    var n = 0, lo = 0, hi = 0, ask = 0;
+    Object.keys(cart).forEach(function(id){ var q = cart[id], p = byId[id] && byId[id].price; if (!byId[id]) return; n += q; if (p){ lo += p[0]*q; hi += p[1]*q; } else ask++; });
+    return {n:n, lo:lo, hi:hi, ask:ask};
+  }
+  function sumText(t){ var s = (t.lo || !t.ask) ? range(t.lo, t.hi) : ""; if (t.ask) s += (s ? " + " : "") + t.ask + " item" + (t.ask > 1 ? "s" : "") + " priced on WhatsApp"; return s; }
+  function update(){
+    cards.forEach(function(c){
+      var q = cart[c.dataset.id] || 0, add = c.querySelector(".add"), qty = c.querySelector(".qty");
+      add.hidden = q > 0; qty.hidden = q === 0; qty.querySelector("output").textContent = q;
+    });
+    var t = totals(), ul = document.getElementById("order-items"); ul.innerHTML = "";
+    Object.keys(cart).forEach(function(id){ var it = byId[id]; if (!it) return; var q = cart[id];
+      var li = document.createElement("li"); var a = document.createElement("span"); a.textContent = q + " × " + it.name;
+      var b = document.createElement("span"); b.textContent = it.price ? range(it.price[0]*q, it.price[1]*q) : "Price on WhatsApp"; li.appendChild(a); li.appendChild(b); ul.appendChild(li); });
+    document.getElementById("order-empty").hidden = t.n > 0; document.getElementById("order-tot").hidden = t.n === 0;
+    document.getElementById("order-sum").textContent = sumText(t);
+    document.getElementById("ob-count").textContent = t.n + (t.n === 1 ? " item" : " items");
+    document.getElementById("ob-sum").textContent = sumText(t);
+    document.getElementById("order-bar").classList.toggle("show", t.n > 0 && !page.hidden);
+  }
+  page.addEventListener("click", function(e){
+    var c = e.target.closest(".sp"); if (!c) return; var id = c.dataset.id;
+    if (e.target.closest(".add") || e.target.closest(".inc")){ cart[id] = (cart[id] || 0) + 1; }
+    else if (e.target.closest(".dec")){ cart[id] = (cart[id] || 0) - 1; if (cart[id] <= 0) delete cart[id]; }
+    else return;
+    save(); update();
+  });
+  window.addEventListener("hashchange", function(){ setTimeout(update, 30); });
+  var form = document.getElementById("order-form"), err = document.getElementById("order-err"), ready = document.getElementById("order-ready"), msg = "";
+  form.addEventListener("submit", function(e){
+    e.preventDefault(); err.hidden = true;
+    var t = totals(), name = form.querySelector("#or-name").value.trim(), phone = form.querySelector("#or-phone").value.trim(), addr = form.querySelector("#or-addr").value.trim(), note = form.querySelector("#or-note").value.trim();
+    var miss = [];
+    if (!t.n) miss.push("add at least one item");
+    if (!name) miss.push("your name"); if (phone.replace(/\D/g,"").length < 10) miss.push("a 10-digit phone number"); if (!addr) miss.push("your delivery address");
+    if (miss.length){ err.textContent = "Please add " + miss.join(", ") + "."; err.hidden = false; return; }
+    var lines = ["Hello RIVSEVA, I would like to order for 3-hour delivery:", ""];
+    Object.keys(cart).forEach(function(id){ var it = byId[id]; if (!it) return; var q = cart[id]; lines.push("- " + q + " x " + it.name + (it.price ? " (" + range(it.price[0]*q, it.price[1]*q) + ")" : " (price to confirm)")); });
+    lines.push("", "Estimated total: " + sumText(t), "", "Name: " + name, "Phone: " + phone, "Address: " + addr); if (note) lines.push("Note: " + note);
+    lines.push("", "Please confirm stock, final price and delivery time.");
+    msg = lines.join("\n"); var url = "https://wa.me/918955058746?text=" + encodeURIComponent(msg);
+    var a = document.getElementById("order-wa"); a.href = url; ready.hidden = false;
+    window.open(url, "_blank", "noopener");
+  });
+  document.getElementById("order-copy").addEventListener("click", function(){
+    var b = this; function ok(){ b.lastChild.textContent = "Copied"; setTimeout(function(){ b.lastChild.textContent = "Copy message"; }, 1800); }
+    if (navigator.clipboard) navigator.clipboard.writeText(msg).then(ok, function(){}); 
+  });
+  update();
+})();
+</script>
+
 </body>
 </html>

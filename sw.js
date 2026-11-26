@@ -1,5 +1,5 @@
 // Simple offline cache for the RIVSEVA site
-const CACHE = "rivseva-v7";
+const CACHE = "rivseva-v9";
 const FILES = ["/", "/index.html", "/manifest.webmanifest", "/icons/icon-192.png", "/icons/icon-512.png",
   "/img/piyvo-duo.jpg", "/img/piyvo-orange.jpg", "/img/piyvo-black.jpg", "/img/piyvo-blue.jpg", "/img/piyvo-dark.jpg"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))); self.skipWaiting(); });
