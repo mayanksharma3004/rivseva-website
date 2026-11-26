@@ -2566,4 +2566,293 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
   var io = ("IntersectionObserver" in window) ? new IntersectionObserver(function(entries){
     entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
   }, {rootMargin:"0px 0px -8% 0px"}) : null;
-  function observeReveal(scope
+  function observeReveal(scope){
+    if (!io) return;
+    scope.querySelectorAll(".rv:not(.in)").forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight) { el.classList.add("seen"); return; }
+      io.observe(el);
+    });
+  }
+
+  /* Forms: compose a WhatsApp message, never a fake confirmation */
+  var INTRO = {
+    booking: GREETING,
+    quick: GREETING,
+    amc: "Hello RIVSEVA, we would like to request a Society AMC proposal for our property."
+  };
+  function normPhone(v){
+    var d = v.replace(/\D/g,"");
+    if (d.length === 12 && d.indexOf("91") === 0) d = d.slice(2);
+    if (d.length === 11 && d.charAt(0) === "0") d = d.slice(1);
+    return /^[6-9]\d{9}$/.test(d) ? d : null;
+  }
+  function fmtDate(v){ var p = v.split("-"); if (p.length !== 3) return v; var d = new Date(+p[0], +p[1]-1, +p[2]); return d.toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short",year:"numeric"}); }
+
+  document.querySelectorAll("form[data-kind]").forEach(function(form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var ok = true, firstBad = null, lines = [];
+      form.querySelectorAll("input,select,textarea").forEach(function(f){
+        var wrap = f.closest(".field"), err = wrap.querySelector(".err"), v = f.value.trim(), msg = "";
+        if (f.required && !v) msg = f.tagName === "SELECT" ? "Please choose an option." : "Please fill this in.";
+        else if (f.hasAttribute("data-phone") && v && !normPhone(v)) msg = "Enter a valid 10-digit Indian mobile number.";
+        if (err){ err.textContent = msg; err.hidden = !msg; }
+        wrap.classList.toggle("invalid", !!msg);
+        f.setAttribute("aria-invalid", msg ? "true" : "false");
+        if (msg){ ok = false; if (!firstBad) firstBad = f; }
+        else if (v){
+          var val = f.hasAttribute("data-phone") ? "+91 " + normPhone(v) : (f.type === "date" ? fmtDate(v) : v);
+          lines.push(f.dataset.label + ": " + val);
+        }
+      });
+      if (!ok){ firstBad.focus(); return; }
+      var text = INTRO[form.dataset.kind] + "\n\n" + lines.join("\n");
+      var panel = form.parentElement.querySelector(".wa-ready");
+      panel.innerHTML = "";
+      var h = document.createElement("h3"); h.textContent = "Your message is ready to send"; h.tabIndex = -1;
+      var p = document.createElement("p"); p.textContent = "Open WhatsApp and press send to share these details with RIVSEVA. " + (form.dataset.kind === "amc" ? "Our team will reply to arrange a conversation." : "Your visit is scheduled only after our team replies to confirm a time.");
+      var pre = document.createElement("pre"); pre.textContent = text;
+      var row = document.createElement("div"); row.className = "btn-row";
+      var go = document.createElement("a"); go.className = "btn btn-primary"; go.href = waLink(text); go.target = "_blank"; go.rel = "noopener";
+      go.innerHTML = '<svg><use href="#i-wa"/></svg>Open WhatsApp';
+      var cp = document.createElement("button"); cp.type = "button"; cp.className = "btn btn-outline"; cp.innerHTML = '<svg><use href="#i-copy"/></svg>Copy details';
+      var note = document.createElement("span"); note.className = "copy-msg"; note.setAttribute("aria-live","polite");
+      cp.addEventListener("click", function(){
+        var done = function(){ note.textContent = "Copied. You can paste it into WhatsApp to +91 89550 58746."; };
+        var fallback = function(){ var r = document.createRange(); r.selectNodeContents(pre); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); note.textContent = "Text selected. Copy it and send to +91 89550 58746."; };
+        try { navigator.clipboard.writeText(text).then(done, fallback); } catch(err){ fallback(); }
+      });
+      row.appendChild(go); row.appendChild(cp);
+      panel.appendChild(h); panel.appendChild(p); panel.appendChild(pre); panel.appendChild(row); panel.appendChild(note);
+      panel.hidden = false;
+      panel.scrollIntoView({behavior:"smooth", block:"nearest"});
+      h.focus({preventScroll:true});
+    });
+    form.addEventListener("input", function(e){
+      var wrap = e.target.closest(".field");
+      if (wrap && wrap.classList.contains("invalid")){ wrap.classList.remove("invalid"); var er = wrap.querySelector(".err"); if (er) er.hidden = true; }
+    });
+  });
+
+  render(true);
+})();
+</script>
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var bar = document.createElement("div"); bar.className = "progress"; bar.setAttribute("aria-hidden","true"); document.body.appendChild(bar);
+  var hdr = document.querySelector(".site-header");
+  function onScroll(){
+    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+    bar.style.setProperty("--p", max > 0 ? (h.scrollTop / max).toFixed(4) : 0);
+    hdr.classList.toggle("scrolled", h.scrollTop > 8);
+  }
+  window.addEventListener("scroll", onScroll, {passive:true}); window.addEventListener("hashchange", function(){ setTimeout(onScroll, 50); }); onScroll();
+  document.querySelectorAll(".hero, .page-hero, .lp-hero").forEach(function(h){
+    var a = document.createElement("div"); a.className = "aura"; a.setAttribute("aria-hidden","true"); a.innerHTML = "<i></i><i></i><i></i>"; h.insertBefore(a, h.firstChild);
+  });
+  if (!reduce && window.matchMedia("(hover: hover)").matches){
+    document.querySelectorAll(".band-navy, .cta-final").forEach(function(el){
+      var s = document.createElement("div"); s.className = "spot"; s.setAttribute("aria-hidden","true"); el.insertBefore(s, el.firstChild);
+      el.addEventListener("pointermove", function(e){ var r = el.getBoundingClientRect(); s.style.setProperty("--mx", (e.clientX - r.left) + "px"); s.style.setProperty("--my", (e.clientY - r.top) + "px"); });
+    });
+  }
+  var marks = document.querySelectorAll(".hl, .process");
+  if ("IntersectionObserver" in window){
+    var io2 = new IntersectionObserver(function(en){ en.forEach(function(x){ if (x.isIntersecting){ x.target.classList.add(x.target.classList.contains("process") ? "live" : "on"); io2.unobserve(x.target); } }); }, {threshold:.4});
+    marks.forEach(function(m){ io2.observe(m); });
+  } else { marks.forEach(function(m){ m.classList.add(m.classList.contains("process") ? "live" : "on"); }); }
+})();
+</script>
+<script>
+(function(){
+  var story = document.querySelector(".x-story"); if (!story) return;
+  var steps = story.querySelectorAll(".st"), stg = story.querySelectorAll(".stg");
+  function activate(s){
+    story.classList.add("has-active");
+    steps.forEach(function(e){ e.classList.toggle("on", e.dataset.s === s); });
+    stg.forEach(function(e){ e.classList.toggle("on", e.dataset.s === s || (s === "7")); });
+  }
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(en){ en.forEach(function(x){ if (x.isIntersecting) activate(x.target.dataset.s); }); }, {rootMargin:"-45% 0px -45% 0px"});
+    steps.forEach(function(e){ io.observe(e); });
+  } else { steps.forEach(function(e){ e.classList.add("on"); }); }
+})();
+</script>
+
+<script>
+(function(){
+  var svg = document.querySelector("svg.real"); if (!svg) return;
+  var segs = svg.querySelectorAll(".pw"), flows = svg.querySelectorAll(".flow"), carts = svg.querySelectorAll(".wl");
+  var stream = svg.querySelector(".stream"), glass = svg.querySelector(".gl");
+  var seq = [];
+  for (var i = 0; i < 7; i++){ seq.push(["s", i]); seq.push(["c", i]); }
+  seq.push(["s", 7]); seq.push(["r", 0]); seq.push(["g", 0]);
+  var D = 700, HOLD = 2600, T = seq.length * D + HOLD;
+  function lv(k, t){ return Math.max(0, Math.min(1, (t - k * D) / D)); }
+  function draw(t){
+    seq.forEach(function(it, k){
+      var L = lv(k, t);
+      if (it[0] === "s"){ segs[it[1]].style.strokeDashoffset = 1 - L; flows[it[1]].classList.toggle("on", L >= 1); }
+      else if (it[0] === "c"){ var h = 168 * L; carts[it[1]].setAttribute("height", h); carts[it[1]].setAttribute("y", 320 - h); }
+      else if (it[0] === "r"){ stream.style.strokeDashoffset = 1 - L; }
+      else { var g = 80 * L; glass.setAttribute("height", g); glass.setAttribute("y", 382 - g); }
+    });
+  }
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce){ draw(T); return; }
+  var running = false, start = null, raf = null;
+  function tick(now){ if (start === null) start = now; var t = (now - start) % T; draw(t); raf = requestAnimationFrame(tick); }
+  function play(){ if (!running){ running = true; start = null; raf = requestAnimationFrame(tick); } }
+  function stop(){ running = false; if (raf) cancelAnimationFrame(raf); }
+  draw(T);
+  if ("IntersectionObserver" in window){
+    new IntersectionObserver(function(en){ en.forEach(function(e){ e.isIntersecting ? play() : stop(); }); }, {threshold:.15}).observe(svg);
+  } else play();
+})();
+</script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){});});}</script>
+<script>
+(function(){
+  var page = document.querySelector('[data-route="shop"]'); if (!page) return;
+  var cart = {}; try { cart = JSON.parse(localStorage.getItem("rivseva-cart") || "{}") || {}; } catch(e){ cart = {}; }
+  var cards = page.querySelectorAll(".sp");
+  var byId = {}; cards.forEach(function(c){ byId[c.dataset.id] = {name:c.dataset.name, price:JSON.parse(c.dataset.price), el:c}; });
+  function inr(v){ return "₹" + v.toLocaleString("en-IN"); }
+  function range(a,b){ return a === b ? inr(a) : inr(a) + " – " + b.toLocaleString("en-IN"); }
+  function save(){ try { localStorage.setItem("rivseva-cart", JSON.stringify(cart)); } catch(e){} }
+  function totals(){
+    var n = 0, lo = 0, hi = 0, ask = 0;
+    Object.keys(cart).forEach(function(id){ var q = cart[id], p = byId[id] && byId[id].price; if (!byId[id]) return; n += q; if (p){ lo += p[0]*q; hi += p[1]*q; } else ask++; });
+    return {n:n, lo:lo, hi:hi, ask:ask};
+  }
+  function sumText(t){ var s = (t.lo || !t.ask) ? range(t.lo, t.hi) : ""; if (t.ask) s += (s ? " + " : "") + t.ask + " item" + (t.ask > 1 ? "s" : "") + " priced on WhatsApp"; return s; }
+  function update(){
+    cards.forEach(function(c){
+      var q = cart[c.dataset.id] || 0, add = c.querySelector(".add"), qty = c.querySelector(".qty");
+      add.hidden = q > 0; qty.hidden = q === 0; qty.querySelector("output").textContent = q;
+    });
+    var t = totals(), ul = document.getElementById("order-items"); ul.innerHTML = "";
+    Object.keys(cart).forEach(function(id){ var it = byId[id]; if (!it) return; var q = cart[id];
+      var li = document.createElement("li"); var a = document.createElement("span"); a.textContent = q + " × " + it.name;
+      var b = document.createElement("span"); b.textContent = it.price ? range(it.price[0]*q, it.price[1]*q) : "Price on WhatsApp"; li.appendChild(a); li.appendChild(b); ul.appendChild(li); });
+    document.getElementById("order-empty").hidden = t.n > 0; document.getElementById("order-tot").hidden = t.n === 0;
+    document.getElementById("order-sum").textContent = sumText(t);
+    document.getElementById("ob-count").textContent = t.n + (t.n === 1 ? " item" : " items");
+    document.getElementById("ob-sum").textContent = sumText(t);
+    document.getElementById("order-bar").classList.toggle("show", t.n > 0 && !page.hidden);
+  }
+  page.addEventListener("click", function(e){
+    var c = e.target.closest(".sp"); if (!c) return; var id = c.dataset.id;
+    if (e.target.closest(".add") || e.target.closest(".inc")){ cart[id] = (cart[id] || 0) + 1; }
+    else if (e.target.closest(".dec")){ cart[id] = (cart[id] || 0) - 1; if (cart[id] <= 0) delete cart[id]; }
+    else return;
+    save(); update();
+  });
+  window.addEventListener("hashchange", function(){ setTimeout(update, 30); });
+  var form = document.getElementById("order-form"), err = document.getElementById("order-err"), ready = document.getElementById("order-ready"), msg = "";
+  form.addEventListener("submit", function(e){
+    e.preventDefault(); err.hidden = true;
+    var t = totals(), name = form.querySelector("#or-name").value.trim(), phone = form.querySelector("#or-phone").value.trim(), addr = form.querySelector("#or-addr").value.trim(), note = form.querySelector("#or-note").value.trim();
+    var miss = [];
+    if (!t.n) miss.push("add at least one item");
+    if (!name) miss.push("your name"); if (phone.replace(/\D/g,"").length < 10) miss.push("a 10-digit phone number"); if (!addr) miss.push("your delivery address");
+    if (miss.length){ err.textContent = "Please add " + miss.join(", ") + "."; err.hidden = false; return; }
+    var lines = ["Hello RIVSEVA, I would like to order for 3-hour delivery:", ""];
+    Object.keys(cart).forEach(function(id){ var it = byId[id]; if (!it) return; var q = cart[id]; lines.push("- " + q + " x " + it.name + (it.price ? " (" + range(it.price[0]*q, it.price[1]*q) + ")" : " (price to confirm)")); });
+    lines.push("", "Estimated total: " + sumText(t), "", "Name: " + name, "Phone: " + phone, "Address: " + addr); if (note) lines.push("Note: " + note);
+    lines.push("", "Please confirm stock, final price and delivery time.");
+    msg = lines.join("\n"); var url = "https://wa.me/918955058746?text=" + encodeURIComponent(msg);
+    var a = document.getElementById("order-wa"); a.href = url; ready.hidden = false;
+    window.open(url, "_blank", "noopener");
+  });
+  document.getElementById("order-copy").addEventListener("click", function(){
+    var b = this; function ok(){ b.lastChild.textContent = "Copied"; setTimeout(function(){ b.lastChild.textContent = "Copy message"; }, 1800); }
+    if (navigator.clipboard) navigator.clipboard.writeText(msg).then(ok, function(){}); 
+  });
+  update();
+})();
+</script>
+
+<script>
+(function(){
+  var page = document.querySelector('[data-route="shop"]'); if (!page) return;
+  var list = document.getElementById("b-list"), totEl = document.getElementById("b-total"), addBtn = document.getElementById("b-add"); if (!list) return;
+  function card(id){ return page.querySelector('.sp[data-id="' + id + '"]'); }
+  function info(id){ var c = card(id); return c ? {name:c.dataset.name, price:JSON.parse(c.dataset.price)} : null; }
+  function inr(v){ return "₹" + v.toLocaleString("en-IN"); }
+  function chosen(){ var ids = []; page.querySelectorAll('input[name="bcab"]:checked, input[name="bpart"]:checked').forEach(function(i){ if (i.value !== "none") ids.push(i.value); }); return ids; }
+  function render(){
+    var ids = chosen(), sum = 0, ask = 0; list.innerHTML = "";
+    ids.forEach(function(id){ var it = info(id); if (!it) return; var li = document.createElement("li"), a = document.createElement("span"), b = document.createElement("span");
+      a.textContent = it.name.replace(/^PIYVO /, ""); b.textContent = it.price ? inr(it.price[0]) : "On WhatsApp"; if (it.price) sum += it.price[0]; else ask++;
+      li.appendChild(a); li.appendChild(b); list.appendChild(li); });
+    totEl.textContent = inr(sum) + (ask ? " + membrane" : ""); addBtn.disabled = ids.length === 0;
+  }
+  page.addEventListener("change", function(e){ if (e.target.name === "bcab" || e.target.name === "bpart") render(); });
+  addBtn.addEventListener("click", function(){
+    chosen().forEach(function(id){ var c = card(id); if (!c) return; var q = c.querySelector(".qty output"); if (q && +q.textContent > 0) return; var add = c.querySelector(".add"); if (add) add.click(); });
+    var el = document.getElementById("shop-order"); if (el) el.scrollIntoView({behavior:"smooth", block:"start"});
+    addBtn.textContent = "Added to your order"; setTimeout(function(){ addBtn.textContent = "Add this build to my order"; }, 2200);
+  });
+  render();
+})();
+</script>
+
+<script>
+(function(){
+  var wz = document.getElementById("wizard"); if (!wz) return;
+  var page = document.querySelector('[data-route="shop"]');
+  var panels = wz.querySelectorAll(".w-panel"), dots = wz.querySelectorAll(".w-dots li"), N = panels.length, cur = 0;
+  var next = document.getElementById("w-next"), back = document.getElementById("w-back");
+  function inr(v){ return "₹" + v.toLocaleString("en-IN"); }
+  function picks(){ var out = []; for (var k = 0; k < N - 1; k++){ var i = panels[k].querySelector("input:checked"); if (i && i.value !== "none") out.push(i); } return out; }
+  function total(){ var s = 0, ask = 0; picks().forEach(function(i){ if (i.dataset.price === "null") ask++; else s += +i.dataset.price; }); return {s:s, ask:ask}; }
+  function totText(t){ return inr(t.s) + (t.ask ? " + membrane" : ""); }
+  function tray(){
+    var th = document.getElementById("w-thumbs"); th.innerHTML = "";
+    picks().forEach(function(i){ var im = document.createElement("img"); im.src = wz.querySelector('input[name="' + i.name + '"][value="' + i.value + '"] ~ .wo-card img').src; im.alt = i.dataset.name; im.title = i.dataset.name; th.appendChild(im); });
+    document.getElementById("w-sofar").textContent = totText(total());
+  }
+  function review(){
+    var box = document.getElementById("w-rev"); box.innerHTML = "";
+    picks().forEach(function(i, n){
+      var src = wz.querySelector('input[name="' + i.name + '"][value="' + i.value + '"] ~ .wo-card img').src;
+      var d = document.createElement("div"); d.className = "w-rev-item"; d.style.animationDelay = (n * 90) + "ms";
+      var im = document.createElement("img"); im.src = src; im.alt = "";
+      var t = document.createElement("span"); t.textContent = i.dataset.name.replace(/^PIYVO /, "");
+      var p = document.createElement("b"); p.textContent = i.dataset.price === "null" ? "On WhatsApp" : inr(+i.dataset.price);
+      d.appendChild(im); d.appendChild(t); d.appendChild(p); box.appendChild(d);
+    });
+    document.getElementById("w-rev-total").textContent = totText(total());
+  }
+  function show(k, scroll){
+    cur = Math.max(0, Math.min(N - 1, k));
+    panels.forEach(function(p, i){ p.hidden = i !== cur; });
+    dots.forEach(function(d, i){ d.classList.toggle("on", i === cur); d.classList.toggle("done", i < cur); });
+    var ol = dots[cur].parentNode; ol.scrollLeft = dots[cur].offsetLeft - ol.clientWidth / 2 + dots[cur].offsetWidth / 2;
+    back.disabled = cur === 0;
+    var last = cur === N - 1;
+    next.hidden = last;
+    next.disabled = !last && !panels[cur].querySelector("input:checked");
+    next.textContent = cur === N - 2 ? "See my RO" : "Next";
+    if (last) review();
+    tray();
+    if (scroll) wz.scrollIntoView({behavior:"smooth", block:"start"});
+  }
+  wz.addEventListener("change", function(e){ if (e.target.type === "radio"){ next.disabled = false; tray(); } });
+  next.addEventListener("click", function(){ show(cur + 1, true); });
+  back.addEventListener("click", function(){ show(cur - 1, true); });
+  dots.forEach(function(d, i){ d.addEventListener("click", function(){ if (i <= cur || panels[i - 1].querySelector("input:checked")) show(i, true); }); });
+  document.getElementById("w-order").addEventListener("click", function(){
+    picks().forEach(function(i){ var c = page.querySelector('.sp[data-id="' + i.value + '"]'); if (!c) return; var q = c.querySelector(".qty output"); if (q && +q.textContent > 0) return; var a = c.querySelector(".add"); if (a) a.click(); });
+    var note = document.getElementById("or-note"); if (note && !note.value) note.value = "This is my custom RO build. Please fit the standard SV, adapter and diverter valve.";
+    var el = document.getElementById("shop-order"); if (el) el.scrollIntoView({behavior:"smooth", block:"start"});
+  });
+  show(0, false);
+})();
+</script>
+
+</body>
+</html>
