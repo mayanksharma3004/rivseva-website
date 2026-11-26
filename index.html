@@ -1004,6 +1004,68 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
 .cta-final.connect{background:var(--ocean)}
 @media (max-width:1000px){.builder{grid-template-columns:1fr}.b-sum{position:static}.shop-grid.dums{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:620px){.b-parts{grid-template-columns:1fr}.shop-grid.dums{grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}.offer-strip .wrap{font-size:.88rem;align-items:flex-start}}
+.wizard{background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);overflow:clip;scroll-margin-top:84px}
+.w-dots{list-style:none;margin:0;padding:1rem 1.2rem;display:flex;gap:.4rem;overflow-x:auto;background:var(--sand);border-bottom:1px solid var(--line);scrollbar-width:none}
+.w-dots::-webkit-scrollbar{display:none}
+.w-dots li{display:flex;align-items:center;gap:.4rem;flex:none;padding:.35rem .7rem .35rem .35rem;border-radius:999px;font-size:.82rem;color:var(--muted);cursor:pointer;white-space:nowrap}
+.w-dots li span{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#fff;border:1px solid var(--line);font-weight:700;font-size:.75rem}
+.w-dots li em{font-style:normal}
+.w-dots li.done span{background:var(--teal);border-color:var(--teal);color:#fff}
+.w-dots li.on{background:#fff;color:var(--navy);font-weight:700;box-shadow:0 4px 12px -6px rgba(10,61,98,.3)}
+.w-dots li.on span{background:var(--ocean);border-color:transparent;color:#fff}
+.w-main{padding:clamp(1.2rem,3vw,2.2rem)}
+.w-panel{animation:wIn .45s ease}
+@keyframes wIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+.w-count{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);margin:0 0 .3rem}
+.w-panel h3{font-size:clamp(1.4rem,2.6vw,2rem);margin:0 0 .4rem}
+.w-desc{color:var(--muted);max-width:70ch;margin:0 0 1.2rem}
+.wo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem}
+.wo-grid.cabs{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.wo{display:block;cursor:pointer;position:relative}
+.wo input{position:absolute;opacity:0;pointer-events:none}
+.wo-card{display:flex;flex-direction:column;height:100%;border:2px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;transition:border-color .2s,box-shadow .2s,transform .2s}
+.wo:hover .wo-card{transform:translateY(-2px);box-shadow:var(--shadow)}
+.wo input:checked + .wo-card{border-color:var(--teal);box-shadow:0 0 0 4px rgba(20,163,154,.18),var(--shadow)}
+.wo input:focus-visible + .wo-card{outline:3px solid var(--teal-deep);outline-offset:2px}
+.wo-img{display:block;aspect-ratio:1/1;background:#F2F7F9;overflow:hidden}
+.cabs .wo-img{aspect-ratio:5/6}
+.wo-img img{display:block;width:100%;height:100%;object-fit:cover}
+.wo-b{display:flex;flex-direction:column;gap:.3rem;padding:.9rem 1rem 1rem;flex:1}
+.wo-sub{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep)}
+.wo-b b{color:var(--navy);font-size:1rem}
+.wo-fx{font-size:.84rem;color:var(--charcoal);line-height:1.45}
+.wo-fx em{font-style:normal;font-weight:700;color:var(--teal-deep)}
+.wo-pr{margin-top:auto;padding-top:.4rem;font-size:1.15rem;font-weight:700;color:var(--navy)}
+.wo-tick{position:absolute;top:12px;right:12px;width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid var(--line);transition:all .2s}
+.wo input:checked + .wo-card .wo-tick{background:var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E") center/16px no-repeat;border-color:var(--teal)}
+.wo-skip .wo-card{justify-content:center;min-height:120px;background:var(--sand);border-style:dashed}
+.wo-skip .wo-b b{font-size:.95rem;font-weight:600;color:var(--muted);padding-right:2rem}
+.w-more{font-size:.85rem;color:var(--muted);margin:1rem 0 0}
+.w-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1rem clamp(1.2rem,3vw,2.2rem);border-top:1px solid var(--line);background:#FBFDFE}
+.w-tray{display:flex;align-items:center;gap:.7rem;min-width:0;flex:1}
+.w-tray-l{font-size:.8rem;color:var(--muted);white-space:nowrap}
+.w-thumbs{display:flex;gap:.3rem;overflow:hidden}
+.w-thumbs img{width:38px;height:38px;border-radius:10px;object-fit:cover;border:1px solid var(--line);background:#F2F7F9;animation:wPop .35s ease}
+@keyframes wPop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+.w-tray b{font-size:1.2rem;color:var(--navy);white-space:nowrap}
+.w-nav{display:flex;gap:.6rem}
+.btn-ghost-dark{background:transparent;border:1px solid var(--line);color:var(--navy)}
+.btn-ghost-dark:disabled,.w-nav .btn:disabled{opacity:.45;cursor:not-allowed}
+.w-review{display:grid;grid-template-columns:1.5fr 1fr;gap:1.5rem;align-items:start}
+.w-rev-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:.8rem}
+.w-rev-item{display:flex;flex-direction:column;gap:.3rem;padding:.6rem;border:1px solid var(--line);border-radius:16px;font-size:.84rem;color:var(--navy);animation:wPop .4s ease both}
+.w-rev-item img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;background:#F2F7F9}
+.w-rev-item b{color:var(--teal-deep)}
+.w-rev-side{background:var(--ocean);color:#fff;border-radius:22px;padding:1.4rem}
+.w-rev-tot{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem}
+.w-rev-tot b{font-size:1.6rem}
+.w-fixed{font-size:.85rem;color:#E6FBF8;margin:.9rem 0}
+.w-rev-side .btn{width:100%;margin-top:1rem;background:#fff;color:#0A3D62;box-shadow:none}
+@media (max-width:820px){.w-review{grid-template-columns:1fr}.w-dots li em{display:none}.w-dots li.on em{display:inline}}
+@media (max-width:620px){.wo-grid,.wo-grid.cabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.wo-fx{font-size:.78rem}.wo-b{padding:.7rem}.w-bar{position:sticky;bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:5}.w-tray-l{display:none}.w-thumbs img{width:30px;height:30px}.w-nav{width:100%}.w-nav .btn{flex:1}}
+.w-nav [hidden]{display:none!important}
+.wo-skip{align-self:start}
+.order-bar:not(.show){visibility:hidden;pointer-events:none}
 </style>
 </head>
 <body>
@@ -1984,13 +2046,22 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
 
   <section class="band" id="shop-build">
     <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">Build your own RO</span><h2>Customise your purifier. We deliver it to your door.</h2><p class="lede">Choose a Signature dummy, then pick the stages your water needs. Each part tells you what it changes in the water you drink, so you can choose what is best for your family.</p></div>
-      <div class="builder">
-        <div class="b-steps">
-          <fieldset><legend><span>1</span>Choose your dummy (cabinet)</legend><div class="b-cabs"><label class="bo"><input type="radio" name="bcab" value="dummy-blue" checked><span class="bo-b"><span class="bo-t"><b>White + Azure blue</b><em>₹2,500</em></span></span></label><label class="bo"><input type="radio" name="bcab" value="dummy-orange"><span class="bo-b"><span class="bo-t"><b>White + Copper orange</b><em>₹2,500</em></span></span></label><label class="bo"><input type="radio" name="bcab" value="dummy-graphite"><span class="bo-b"><span class="bo-t"><b>White + Graphite</b><em>₹2,500</em></span></span></label><label class="bo"><input type="radio" name="bcab" value="dummy-black"><span class="bo-b"><span class="bo-t"><b>Full black</b><em>₹3,200</em></span></span></label><label class="bo"><input type="radio" name="bcab" value="none"><span class="bo-b"><span class="bo-t"><b>I already have a cabinet</b><em>₹0</em></span></span></label></div></fieldset>
-          <fieldset><legend><span>2</span>Pick your stages</legend><p class="b-hint">Water from a borewell or tanker usually needs RO. Not sure? Tell us your water's TDS on WhatsApp and we will suggest a setup.</p><div class="b-parts"><label class="bo"><input type="checkbox" name="bpart" value="spun" checked><span class="bo-b"><span class="bo-t"><b>Spun (Sponge) Filter</b><em>₹200</em></span><span class=bo-fx>Takes out sand, mud and rust you can see, so water looks less cloudy, and protects every filter after it.</span></span></label><label class="bo"><input type="checkbox" name="bpart" value="sediment" checked><span class="bo-b"><span class="bo-t"><b>Sediment Filter</b><em>₹550</em></span><span class=bo-fx>Catches the finer dirt the sponge misses, for clearer water and a longer-lasting membrane.</span></span></label><label class="bo"><input type="checkbox" name="bpart" value="carbon" checked><span class="bo-b"><span class="bo-t"><b>Carbon Filter</b><em>₹550</em></span><span class=bo-fx>Reduces chlorine, bad smell and colour, so water tastes and smells fresher.</span></span></label><label class="bo"><input type="checkbox" name="bpart" value="ro" checked><span class="bo-b"><span class="bo-t"><b>RO Membrane</b><em>Price on WhatsApp</em></span><span class=bo-fx>Lowers TDS: dissolved salts and hardness. The key stage for salty or hard borewell and tanker water.</span></span></label><label class="bo"><input type="checkbox" name="bpart" value="uf" checked><span class="bo-b"><span class="bo-t"><b>UF Filter</b><em>₹550</em></span><span class=bo-fx>An extra barrier for fine particles and many microorganisms, without removing minerals.</span></span></label><label class="bo"><input type="checkbox" name="bpart" value="copper" checked><span class="bo-b"><span class="bo-t"><b>Copper Filter</b><em>₹550</em></span><span class=bo-fx>Adds a trace of copper, the traditional copper-vessel touch, to your drinking water.</span></span></label><label class="bo"><input type="checkbox" name="bpart" value="alkaline" checked><span class="bo-b"><span class="bo-t"><b>Alkaline Filter</b><em>₹550</em></span><span class=bo-fx>Adds minerals back after RO and can raise pH, for a smoother, balanced taste.</span></span></label><label class="bo"><input type="checkbox" name="bpart" value="pump" checked><span class="bo-b"><span class="bo-t"><b>Diaphragm Booster Pump</b><em>₹1,500</em></span><span class=bo-fx>Pushes water through the RO membrane at the right pressure, for steady flow when tap pressure is low.</span></span></label></div></fieldset>
+      <div class="sec-head"><span class="eyebrow">Build your own RO</span><h2>Build it part by part. Make it yours.</h2><p class="lede">Choose your cabinet, then each stage of your purifier, one step at a time. You see every part, what it changes in your water, and your price as it grows. We deliver it to your doorstep.</p></div>
+      <div class="wizard" id="wizard">
+        <ol class="w-dots"><li data-step="0"><span>1</span><em>Cabinet</em></li><li data-step="1"><span>2</span><em>Booster pump</em></li><li data-step="2"><span>3</span><em>Sponge</em></li><li data-step="3"><span>4</span><em>Sediment</em></li><li data-step="4"><span>5</span><em>Carbon</em></li><li data-step="5"><span>6</span><em>RO membrane</em></li><li data-step="6"><span>7</span><em>UF</em></li><li data-step="7"><span>8</span><em>Copper</em></li><li data-step="8"><span>9</span><em>Alkaline</em></li><li data-step="9"><span>10</span><em>Your RO</em></li></ol>
+        <div class="w-main">
+<div class="w-panel" data-step="0"><p class="w-count">Step 1 of 10</p><h3>Choose your cabinet</h3><p class=w-desc>Start with the body of your purifier. Everything you pick next goes inside it.</p><div class="wo-grid cabs" role="radiogroup" aria-label="Choose your cabinet"><label class="wo"><input type="radio" name="w-cab" value="dummy-blue" data-name="Signature dummy, White + Azure blue" data-price="2500"><span class="wo-card"><span class="wo-img"><img src="img/piyvo-blue.jpg" alt="Signature dummy, White + Azure blue" loading="lazy"></span><span class="wo-b"><span class="wo-sub">Signature cabinet</span><b>Signature dummy, White + Azure blue</b><span class="wo-pr">₹2,500</span></span><span class="wo-tick" aria-hidden="true"></span></span></label><label class="wo"><input type="radio" name="w-cab" value="dummy-orange" data-name="Signature dummy, White + Copper orange" data-price="2500"><span class="wo-card"><span class="wo-img"><img src="img/piyvo-orange.jpg" alt="Signature dummy, White + Copper orange" loading="lazy"></span><span class="wo-b"><span class="wo-sub">Signature cabinet</span><b>Signature dummy, White + Copper orange</b><span class="wo-pr">₹2,500</span></span><span class="wo-tick" aria-hidden="true"></span></span></label><label class="wo"><input type="radio" name="w-cab" value="dummy-graphite" data-name="Signature dummy, White + Graphite" data-price="2500"><span class="wo-card"><span class="wo-img"><img src="img/piyvo-black.jpg" alt="Signature dummy, White + Graphite" loading="lazy"></span><span class="wo-b"><span class="wo-sub">Signature cabinet</span><b>Signature dummy, White + Graphite</b><span class="wo-pr">₹2,500</span></span><span class="wo-tick" aria-hidden="true"></span></span></label><label class="wo"><input type="radio" name="w-cab" value="dummy-black" data-name="Signature dummy, Full black" data-price="3200"><span class="wo-card"><span class="wo-img"><img src="img/piyvo-dark.jpg" alt="Signature dummy, Full black" loading="lazy"></span><span class="wo-b"><span class="wo-sub">Signature cabinet</span><b>Signature dummy, Full black</b><span class="wo-pr">₹3,200</span></span><span class="wo-tick" aria-hidden="true"></span></span></label><label class="wo wo-skip"><input type="radio" name="w-cab" value="none" data-name="" data-price="0"><span class="wo-card"><span class="wo-b"><b>I already have a cabinet</b></span><span class="wo-tick" aria-hidden="true"></span></span></label></div></div>
+<div class="w-panel" data-step="1" hidden><p class="w-count">Step 2 of 10</p><h3>Pick your booster pump</h3><p class=w-desc>The pump pushes water through the RO membrane at the right pressure.</p><div class="wo-grid" role="radiogroup" aria-label="Pick your booster pump"><label class="wo"><input type="radio" name="w-pump" value="pump" data-name="PIYVO Diaphragm Booster Pump" data-price="1500"><span class="wo-card"><span class="wo-img"><img src="img/parts/pump.jpg" alt="PIYVO Diaphragm Booster Pump" loading="lazy"></span><span class="wo-b"><span class="wo-sub">100 GPD · 24 V DC</span><b>PIYVO Diaphragm Booster Pump</b><span class=wo-fx><em>In your water:</em> Steady flow and full membrane output, even when your tap pressure is low.</span><span class="wo-pr">₹1,500</span></span><span class="wo-tick" aria-hidden="true"></span></span></label><label class="wo wo-skip"><input type="radio" name="w-pump" value="none" data-name="" data-price="0"><span class="wo-card"><span class="wo-b"><b>No pump. Only if your water pressure is strong; we will check.</b></span><span class="wo-tick" aria-hidden="true"></span></span></label></div><p class="w-more">More quality options for this stage are coming soon. Ask us on WhatsApp if you want something specific.</p></div>
+<div class="w-panel" data-step="2" hidden><p class="w-count">Step 3 of 10</p><h3>Pick your sponge filter</h3><p class=w-desc>Stage 1. The first line of defence for everything after it.</p><div class="wo-grid" role="radiogroup" aria-label="Pick your sponge filter"><label class="wo"><input type="radio" name="w-spun" value="spun" data-name="PIYVO Spun (Sponge) Filter" data-price="200"><span class="wo-card"><span class="wo-img"><img src="img/parts/spun.jpg" alt="PIYVO Spun (Sponge) Filter" loading="lazy"></span><span class="wo-b"><span class="wo-sub">Stage 1</span><b>PIYVO Spun (Sponge) Filter</b><span class=wo-fx><em>In your water:</em> Takes out sand, mud and rust you can see, so water looks less cloudy.</span><span class="wo-pr">₹200</span></span><span class="wo-tick" aria-hidden="true"></span></span></label><label class="wo wo-skip"><input type="radio" name="w-spun" value="none" data-name="" data-price="0"><span class="wo-card"><span class="wo-b"><b>Skip this stage</b></span><span class="wo-tick" aria-hidden="true"></span></span></label></div><p class="w-more">More quality options for this stage are coming soon. Ask us on WhatsApp if you want something specific.</p></div>
+<div class="w-panel" data-step="3" hidden><p class="w-count">Step 4 of 10</p><h3>Pick your sediment filter</h3><p class=w-desc>Stage 2. Catches what the sponge lets through.</p><div class="wo-grid" role="radiogroup" aria-label="Pick your sediment filter"><label class="wo"><input type="radio" name="w-sediment" value="sediment" data-name="PIYVO Sediment Filter" data-price="550"><span class="wo-card"><span class="wo-img"><img src="img/parts/sediment.jpg" alt="PIYVO Sediment Filter" loading="lazy"></span><span class="wo-b"><span class="wo-sub">Inline · Stage 2</span><b>PIYVO Sediment Filter</b><span class=wo-fx><em>In your water:</em> Removes finer dirt, sand and rust, for clearer water and a longer-lasting membrane.</span><span class="wo-pr">₹550</span></span><span class="wo-tick" aria-hidden="true"></span></span></label><label class="wo wo-skip"><input type="radio" name="w-sediment" value="none" data-name="" data-price="0"><span class="wo-card"><span class="wo-b"><b>Skip this stage</b></span><span class="wo-tick" aria-hidden="true"></span></span></label></div><p class="w-more">More quality options for this stage are coming soon. Ask us on WhatsApp if you want something specific.</p></div>
+<div class="w-panel" data-step="4" hidden><p class="w-count">Step 5 of 10</p><h3>Pick your carbon filter</h3><p class=w-desc>Stage 3. Works on taste and smell.</p><div class="wo-grid" role="radiogroup" aria-label="Pick your carbon filter"><label class="wo"><input type="radio" name="w-carbon" value="carbon" data-name="PIYVO Carbon Filter" data-price="550"><span class="wo-card"><span class="wo-img"><img src="img/parts/carbon.jpg" alt="PIYVO Carbon Filter" loading="lazy"></span><span class="wo-b"><span class="wo-sub">Inline · Stage 3</span><b>PIYVO Carbon Filter</b><span class=wo-fx><em>In your water:</em> Reduces chlorine, bad smell and colour, so water tastes and smells fresher.</span><span class="wo-pr">₹550</span></span><span class="wo-tick" aria-hidden="true"></span></span></label><label class="wo wo-skip"><input type="radio" name="w-carbon" value="none" data-name="" data-price="0"><span class="wo-card"><span class="wo-b"><b>Skip this stage</b></span><span class="wo-tick" aria-hidden="true"></span></span></label></div><p class="w-more">More quality options for this stage are coming soon. Ask us on WhatsApp if you want something specific.</p></div>
+<div class="w-panel" data-step="5" hidden><p class="w-count">Step 6 of 10</p><h3>Pick your RO membrane</h3><p class=w-desc>Stage 4, the heart of your purifier. The right membrane depends on your water&#x27;s TDS (total dissolved solids). If your TDS is above about 500, RO is usually needed. Not sure? Send us your TDS reading on WhatsApp.</p><div class="wo-grid" role="radiogroup" aria-label="Pick your RO membrane"><label class="wo"><input type="radio" name="w-ro" value="ro" data-name="PIYVO RO Membrane" data-price="null"><span class="wo-card"><span class="wo-img"><img src="img/parts/ro.jpg" alt="PIYVO RO Membrane" loading="lazy"></span><span class="wo-b"><span class="wo-sub">Stage 4</span><b>PIYVO RO Membrane</b><span class=wo-fx><em>In your water:</em> Lowers TDS: dissolved salts and hardness. The key stage for salty or hard borewell and tanker water.</span><span class="wo-pr">Price on WhatsApp</span></span><span class="wo-tick" aria-hidden="true"></span></span></label><label class="wo wo-skip"><input type="radio" name="w-ro" value="none" data-name="" data-price="0"><span class="wo-card"><span class="wo-b"><b>Skip RO. My water already has low TDS.</b></span><span class="wo-tick" aria-hidden="true"></span></span></label></div><p class="w-more">More quality options for this stage are coming soon. Ask us on WhatsApp if you want something specific.</p></div>
+<div class="w-panel" data-step="6" hidden><p class="w-count">Step 7 of 10</p><h3>Pick your UF filter</h3><p class=w-desc>Stage 5. A compact, half-size cartridge for extra protection.</p><div class="wo-grid" role="radiogroup" aria-label="Pick your UF filter"><label class="wo"><input type="radio" name="w-uf" value="uf" data-name="PIYVO UF Filter" data-price="550"><span class="wo-card"><span class="wo-img"><img src="img/parts/uf.jpg" alt="PIYVO UF Filter" loading="lazy"></span><span class="wo-b"><span class="wo-sub">Half size · Stage 5</span><b>PIYVO UF Filter</b><span class=wo-fx><em>In your water:</em> An extra barrier for fine particles and many microorganisms, without removing minerals.</span><span class="wo-pr">₹550</span></span><span class="wo-tick" aria-hidden="true"></span></span></label><label class="wo wo-skip"><input type="radio" name="w-uf" value="none" data-name="" data-price="0"><span class="wo-card"><span class="wo-b"><b>Skip this stage</b></span><span class="wo-tick" aria-hidden="true"></span></span></label></div><p class="w-more">More quality options for this stage are coming soon. Ask us on WhatsApp if you want something specific.</p></div>
+<div class="w-panel" data-step="7" hidden><p class="w-count">Step 8 of 10</p><h3>Pick your copper filter</h3><p class=w-desc>Stage 6. A traditional touch many Indian homes prefer.</p><div class="wo-grid" role="radiogroup" aria-label="Pick your copper filter"><label class="wo"><input type="radio" name="w-copper" value="copper" data-name="PIYVO Copper Filter" data-price="550"><span class="wo-card"><span class="wo-img"><img src="img/parts/copper.jpg" alt="PIYVO Copper Filter" loading="lazy"></span><span class="wo-b"><span class="wo-sub">Stage 6</span><b>PIYVO Copper Filter</b><span class=wo-fx><em>In your water:</em> Adds a trace of copper, the copper-vessel touch, to your drinking water.</span><span class="wo-pr">₹550</span></span><span class="wo-tick" aria-hidden="true"></span></span></label><label class="wo wo-skip"><input type="radio" name="w-copper" value="none" data-name="" data-price="0"><span class="wo-card"><span class="wo-b"><b>Skip this stage</b></span><span class="wo-tick" aria-hidden="true"></span></span></label></div><p class="w-more">More quality options for this stage are coming soon. Ask us on WhatsApp if you want something specific.</p></div>
+<div class="w-panel" data-step="8" hidden><p class="w-count">Step 9 of 10</p><h3>Pick your alkaline filter</h3><p class=w-desc>Stage 7. The last stage before your glass.</p><div class="wo-grid" role="radiogroup" aria-label="Pick your alkaline filter"><label class="wo"><input type="radio" name="w-alkaline" value="alkaline" data-name="PIYVO Alkaline Filter" data-price="550"><span class="wo-card"><span class="wo-img"><img src="img/parts/alkaline.jpg" alt="PIYVO Alkaline Filter" loading="lazy"></span><span class="wo-b"><span class="wo-sub">Stage 7</span><b>PIYVO Alkaline Filter</b><span class=wo-fx><em>In your water:</em> Adds minerals back after RO and can raise pH, for a smoother, balanced taste.</span><span class="wo-pr">₹550</span></span><span class="wo-tick" aria-hidden="true"></span></span></label><label class="wo wo-skip"><input type="radio" name="w-alkaline" value="none" data-name="" data-price="0"><span class="wo-card"><span class="wo-b"><b>Skip this stage</b></span><span class="wo-tick" aria-hidden="true"></span></span></label></div><p class="w-more">More quality options for this stage are coming soon. Ask us on WhatsApp if you want something specific.</p></div>
+<div class="w-panel" data-step="9" hidden><p class="w-count">Step 10 of 10</p><h3>Your PIYVO, built by you</h3><div class="w-review"><div class="w-rev-items" id="w-rev"></div><div class="w-rev-side"><div class="w-rev-tot"><span>Your RO total</span><b id="w-rev-total"></b></div><p class="w-fixed"><b>Fitted as standard in every build:</b> SV (solenoid valve), AC adapter, diverter valve and fittings. We include these in your final quote.</p><p class="b-free"><svg><use href="#i-check"/></svg>No service charge on your first order</p><p class="b-free"><svg><use href="#i-clock"/></svg>Delivered to your doorstep</p><button type="button" class="btn btn-primary" id="w-order">Order my RO</button><p class="b-note">We confirm the final setup and price with you on WhatsApp before delivery.</p></div></div></div>
         </div>
-        <aside class="b-sum" aria-live="polite"><p class="x-kicker">Your custom RO</p><ul id="b-list"></ul><div class="b-tot"><span>Estimated total</span><b id="b-total"></b></div><p class="b-free"><svg><use href="#i-check"/></svg>No service charge on your first order</p><p class="b-free"><svg><use href="#i-clock"/></svg>Delivered to your doorstep</p><button type="button" class="btn btn-primary" id="b-add">Add this build to my order</button><p class="b-note">We check your water and confirm the final setup on WhatsApp before we deliver.</p></aside>
+        <div class="w-bar"><div class="w-tray" id="w-tray" aria-live="polite"><span class="w-tray-l">Your RO so far</span><span class="w-thumbs" id="w-thumbs"></span><b id="w-sofar">₹0</b></div><div class="w-nav"><button type="button" class="btn btn-ghost-dark" id="w-back">Back</button><button type="button" class="btn btn-primary" id="w-next" disabled>Next</button></div></div>
       </div>
     </div>
   </section>
@@ -2495,239 +2566,4 @@ svg.real .ph{filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
   var io = ("IntersectionObserver" in window) ? new IntersectionObserver(function(entries){
     entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
   }, {rootMargin:"0px 0px -8% 0px"}) : null;
-  function observeReveal(scope){
-    if (!io) return;
-    scope.querySelectorAll(".rv:not(.in)").forEach(function(el){
-      var r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight) { el.classList.add("seen"); return; }
-      io.observe(el);
-    });
-  }
-
-  /* Forms: compose a WhatsApp message, never a fake confirmation */
-  var INTRO = {
-    booking: GREETING,
-    quick: GREETING,
-    amc: "Hello RIVSEVA, we would like to request a Society AMC proposal for our property."
-  };
-  function normPhone(v){
-    var d = v.replace(/\D/g,"");
-    if (d.length === 12 && d.indexOf("91") === 0) d = d.slice(2);
-    if (d.length === 11 && d.charAt(0) === "0") d = d.slice(1);
-    return /^[6-9]\d{9}$/.test(d) ? d : null;
-  }
-  function fmtDate(v){ var p = v.split("-"); if (p.length !== 3) return v; var d = new Date(+p[0], +p[1]-1, +p[2]); return d.toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short",year:"numeric"}); }
-
-  document.querySelectorAll("form[data-kind]").forEach(function(form){
-    form.addEventListener("submit", function(e){
-      e.preventDefault();
-      var ok = true, firstBad = null, lines = [];
-      form.querySelectorAll("input,select,textarea").forEach(function(f){
-        var wrap = f.closest(".field"), err = wrap.querySelector(".err"), v = f.value.trim(), msg = "";
-        if (f.required && !v) msg = f.tagName === "SELECT" ? "Please choose an option." : "Please fill this in.";
-        else if (f.hasAttribute("data-phone") && v && !normPhone(v)) msg = "Enter a valid 10-digit Indian mobile number.";
-        if (err){ err.textContent = msg; err.hidden = !msg; }
-        wrap.classList.toggle("invalid", !!msg);
-        f.setAttribute("aria-invalid", msg ? "true" : "false");
-        if (msg){ ok = false; if (!firstBad) firstBad = f; }
-        else if (v){
-          var val = f.hasAttribute("data-phone") ? "+91 " + normPhone(v) : (f.type === "date" ? fmtDate(v) : v);
-          lines.push(f.dataset.label + ": " + val);
-        }
-      });
-      if (!ok){ firstBad.focus(); return; }
-      var text = INTRO[form.dataset.kind] + "\n\n" + lines.join("\n");
-      var panel = form.parentElement.querySelector(".wa-ready");
-      panel.innerHTML = "";
-      var h = document.createElement("h3"); h.textContent = "Your message is ready to send"; h.tabIndex = -1;
-      var p = document.createElement("p"); p.textContent = "Open WhatsApp and press send to share these details with RIVSEVA. " + (form.dataset.kind === "amc" ? "Our team will reply to arrange a conversation." : "Your visit is scheduled only after our team replies to confirm a time.");
-      var pre = document.createElement("pre"); pre.textContent = text;
-      var row = document.createElement("div"); row.className = "btn-row";
-      var go = document.createElement("a"); go.className = "btn btn-primary"; go.href = waLink(text); go.target = "_blank"; go.rel = "noopener";
-      go.innerHTML = '<svg><use href="#i-wa"/></svg>Open WhatsApp';
-      var cp = document.createElement("button"); cp.type = "button"; cp.className = "btn btn-outline"; cp.innerHTML = '<svg><use href="#i-copy"/></svg>Copy details';
-      var note = document.createElement("span"); note.className = "copy-msg"; note.setAttribute("aria-live","polite");
-      cp.addEventListener("click", function(){
-        var done = function(){ note.textContent = "Copied. You can paste it into WhatsApp to +91 89550 58746."; };
-        var fallback = function(){ var r = document.createRange(); r.selectNodeContents(pre); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); note.textContent = "Text selected. Copy it and send to +91 89550 58746."; };
-        try { navigator.clipboard.writeText(text).then(done, fallback); } catch(err){ fallback(); }
-      });
-      row.appendChild(go); row.appendChild(cp);
-      panel.appendChild(h); panel.appendChild(p); panel.appendChild(pre); panel.appendChild(row); panel.appendChild(note);
-      panel.hidden = false;
-      panel.scrollIntoView({behavior:"smooth", block:"nearest"});
-      h.focus({preventScroll:true});
-    });
-    form.addEventListener("input", function(e){
-      var wrap = e.target.closest(".field");
-      if (wrap && wrap.classList.contains("invalid")){ wrap.classList.remove("invalid"); var er = wrap.querySelector(".err"); if (er) er.hidden = true; }
-    });
-  });
-
-  render(true);
-})();
-</script>
-<script>
-(function(){
-  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var bar = document.createElement("div"); bar.className = "progress"; bar.setAttribute("aria-hidden","true"); document.body.appendChild(bar);
-  var hdr = document.querySelector(".site-header");
-  function onScroll(){
-    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
-    bar.style.setProperty("--p", max > 0 ? (h.scrollTop / max).toFixed(4) : 0);
-    hdr.classList.toggle("scrolled", h.scrollTop > 8);
-  }
-  window.addEventListener("scroll", onScroll, {passive:true}); window.addEventListener("hashchange", function(){ setTimeout(onScroll, 50); }); onScroll();
-  document.querySelectorAll(".hero, .page-hero, .lp-hero").forEach(function(h){
-    var a = document.createElement("div"); a.className = "aura"; a.setAttribute("aria-hidden","true"); a.innerHTML = "<i></i><i></i><i></i>"; h.insertBefore(a, h.firstChild);
-  });
-  if (!reduce && window.matchMedia("(hover: hover)").matches){
-    document.querySelectorAll(".band-navy, .cta-final").forEach(function(el){
-      var s = document.createElement("div"); s.className = "spot"; s.setAttribute("aria-hidden","true"); el.insertBefore(s, el.firstChild);
-      el.addEventListener("pointermove", function(e){ var r = el.getBoundingClientRect(); s.style.setProperty("--mx", (e.clientX - r.left) + "px"); s.style.setProperty("--my", (e.clientY - r.top) + "px"); });
-    });
-  }
-  var marks = document.querySelectorAll(".hl, .process");
-  if ("IntersectionObserver" in window){
-    var io2 = new IntersectionObserver(function(en){ en.forEach(function(x){ if (x.isIntersecting){ x.target.classList.add(x.target.classList.contains("process") ? "live" : "on"); io2.unobserve(x.target); } }); }, {threshold:.4});
-    marks.forEach(function(m){ io2.observe(m); });
-  } else { marks.forEach(function(m){ m.classList.add(m.classList.contains("process") ? "live" : "on"); }); }
-})();
-</script>
-<script>
-(function(){
-  var story = document.querySelector(".x-story"); if (!story) return;
-  var steps = story.querySelectorAll(".st"), stg = story.querySelectorAll(".stg");
-  function activate(s){
-    story.classList.add("has-active");
-    steps.forEach(function(e){ e.classList.toggle("on", e.dataset.s === s); });
-    stg.forEach(function(e){ e.classList.toggle("on", e.dataset.s === s || (s === "7")); });
-  }
-  if ("IntersectionObserver" in window){
-    var io = new IntersectionObserver(function(en){ en.forEach(function(x){ if (x.isIntersecting) activate(x.target.dataset.s); }); }, {rootMargin:"-45% 0px -45% 0px"});
-    steps.forEach(function(e){ io.observe(e); });
-  } else { steps.forEach(function(e){ e.classList.add("on"); }); }
-})();
-</script>
-
-<script>
-(function(){
-  var svg = document.querySelector("svg.real"); if (!svg) return;
-  var segs = svg.querySelectorAll(".pw"), flows = svg.querySelectorAll(".flow"), carts = svg.querySelectorAll(".wl");
-  var stream = svg.querySelector(".stream"), glass = svg.querySelector(".gl");
-  var seq = [];
-  for (var i = 0; i < 7; i++){ seq.push(["s", i]); seq.push(["c", i]); }
-  seq.push(["s", 7]); seq.push(["r", 0]); seq.push(["g", 0]);
-  var D = 700, HOLD = 2600, T = seq.length * D + HOLD;
-  function lv(k, t){ return Math.max(0, Math.min(1, (t - k * D) / D)); }
-  function draw(t){
-    seq.forEach(function(it, k){
-      var L = lv(k, t);
-      if (it[0] === "s"){ segs[it[1]].style.strokeDashoffset = 1 - L; flows[it[1]].classList.toggle("on", L >= 1); }
-      else if (it[0] === "c"){ var h = 168 * L; carts[it[1]].setAttribute("height", h); carts[it[1]].setAttribute("y", 320 - h); }
-      else if (it[0] === "r"){ stream.style.strokeDashoffset = 1 - L; }
-      else { var g = 80 * L; glass.setAttribute("height", g); glass.setAttribute("y", 382 - g); }
-    });
-  }
-  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduce){ draw(T); return; }
-  var running = false, start = null, raf = null;
-  function tick(now){ if (start === null) start = now; var t = (now - start) % T; draw(t); raf = requestAnimationFrame(tick); }
-  function play(){ if (!running){ running = true; start = null; raf = requestAnimationFrame(tick); } }
-  function stop(){ running = false; if (raf) cancelAnimationFrame(raf); }
-  draw(T);
-  if ("IntersectionObserver" in window){
-    new IntersectionObserver(function(en){ en.forEach(function(e){ e.isIntersecting ? play() : stop(); }); }, {threshold:.15}).observe(svg);
-  } else play();
-})();
-</script>
-<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){});});}</script>
-<script>
-(function(){
-  var page = document.querySelector('[data-route="shop"]'); if (!page) return;
-  var cart = {}; try { cart = JSON.parse(localStorage.getItem("rivseva-cart") || "{}") || {}; } catch(e){ cart = {}; }
-  var cards = page.querySelectorAll(".sp");
-  var byId = {}; cards.forEach(function(c){ byId[c.dataset.id] = {name:c.dataset.name, price:JSON.parse(c.dataset.price), el:c}; });
-  function inr(v){ return "₹" + v.toLocaleString("en-IN"); }
-  function range(a,b){ return a === b ? inr(a) : inr(a) + " – " + b.toLocaleString("en-IN"); }
-  function save(){ try { localStorage.setItem("rivseva-cart", JSON.stringify(cart)); } catch(e){} }
-  function totals(){
-    var n = 0, lo = 0, hi = 0, ask = 0;
-    Object.keys(cart).forEach(function(id){ var q = cart[id], p = byId[id] && byId[id].price; if (!byId[id]) return; n += q; if (p){ lo += p[0]*q; hi += p[1]*q; } else ask++; });
-    return {n:n, lo:lo, hi:hi, ask:ask};
-  }
-  function sumText(t){ var s = (t.lo || !t.ask) ? range(t.lo, t.hi) : ""; if (t.ask) s += (s ? " + " : "") + t.ask + " item" + (t.ask > 1 ? "s" : "") + " priced on WhatsApp"; return s; }
-  function update(){
-    cards.forEach(function(c){
-      var q = cart[c.dataset.id] || 0, add = c.querySelector(".add"), qty = c.querySelector(".qty");
-      add.hidden = q > 0; qty.hidden = q === 0; qty.querySelector("output").textContent = q;
-    });
-    var t = totals(), ul = document.getElementById("order-items"); ul.innerHTML = "";
-    Object.keys(cart).forEach(function(id){ var it = byId[id]; if (!it) return; var q = cart[id];
-      var li = document.createElement("li"); var a = document.createElement("span"); a.textContent = q + " × " + it.name;
-      var b = document.createElement("span"); b.textContent = it.price ? range(it.price[0]*q, it.price[1]*q) : "Price on WhatsApp"; li.appendChild(a); li.appendChild(b); ul.appendChild(li); });
-    document.getElementById("order-empty").hidden = t.n > 0; document.getElementById("order-tot").hidden = t.n === 0;
-    document.getElementById("order-sum").textContent = sumText(t);
-    document.getElementById("ob-count").textContent = t.n + (t.n === 1 ? " item" : " items");
-    document.getElementById("ob-sum").textContent = sumText(t);
-    document.getElementById("order-bar").classList.toggle("show", t.n > 0 && !page.hidden);
-  }
-  page.addEventListener("click", function(e){
-    var c = e.target.closest(".sp"); if (!c) return; var id = c.dataset.id;
-    if (e.target.closest(".add") || e.target.closest(".inc")){ cart[id] = (cart[id] || 0) + 1; }
-    else if (e.target.closest(".dec")){ cart[id] = (cart[id] || 0) - 1; if (cart[id] <= 0) delete cart[id]; }
-    else return;
-    save(); update();
-  });
-  window.addEventListener("hashchange", function(){ setTimeout(update, 30); });
-  var form = document.getElementById("order-form"), err = document.getElementById("order-err"), ready = document.getElementById("order-ready"), msg = "";
-  form.addEventListener("submit", function(e){
-    e.preventDefault(); err.hidden = true;
-    var t = totals(), name = form.querySelector("#or-name").value.trim(), phone = form.querySelector("#or-phone").value.trim(), addr = form.querySelector("#or-addr").value.trim(), note = form.querySelector("#or-note").value.trim();
-    var miss = [];
-    if (!t.n) miss.push("add at least one item");
-    if (!name) miss.push("your name"); if (phone.replace(/\D/g,"").length < 10) miss.push("a 10-digit phone number"); if (!addr) miss.push("your delivery address");
-    if (miss.length){ err.textContent = "Please add " + miss.join(", ") + "."; err.hidden = false; return; }
-    var lines = ["Hello RIVSEVA, I would like to order for 3-hour delivery:", ""];
-    Object.keys(cart).forEach(function(id){ var it = byId[id]; if (!it) return; var q = cart[id]; lines.push("- " + q + " x " + it.name + (it.price ? " (" + range(it.price[0]*q, it.price[1]*q) + ")" : " (price to confirm)")); });
-    lines.push("", "Estimated total: " + sumText(t), "", "Name: " + name, "Phone: " + phone, "Address: " + addr); if (note) lines.push("Note: " + note);
-    lines.push("", "Please confirm stock, final price and delivery time.");
-    msg = lines.join("\n"); var url = "https://wa.me/918955058746?text=" + encodeURIComponent(msg);
-    var a = document.getElementById("order-wa"); a.href = url; ready.hidden = false;
-    window.open(url, "_blank", "noopener");
-  });
-  document.getElementById("order-copy").addEventListener("click", function(){
-    var b = this; function ok(){ b.lastChild.textContent = "Copied"; setTimeout(function(){ b.lastChild.textContent = "Copy message"; }, 1800); }
-    if (navigator.clipboard) navigator.clipboard.writeText(msg).then(ok, function(){}); 
-  });
-  update();
-})();
-</script>
-
-<script>
-(function(){
-  var page = document.querySelector('[data-route="shop"]'); if (!page) return;
-  var list = document.getElementById("b-list"), totEl = document.getElementById("b-total"), addBtn = document.getElementById("b-add"); if (!list) return;
-  function card(id){ return page.querySelector('.sp[data-id="' + id + '"]'); }
-  function info(id){ var c = card(id); return c ? {name:c.dataset.name, price:JSON.parse(c.dataset.price)} : null; }
-  function inr(v){ return "₹" + v.toLocaleString("en-IN"); }
-  function chosen(){ var ids = []; page.querySelectorAll('input[name="bcab"]:checked, input[name="bpart"]:checked').forEach(function(i){ if (i.value !== "none") ids.push(i.value); }); return ids; }
-  function render(){
-    var ids = chosen(), sum = 0, ask = 0; list.innerHTML = "";
-    ids.forEach(function(id){ var it = info(id); if (!it) return; var li = document.createElement("li"), a = document.createElement("span"), b = document.createElement("span");
-      a.textContent = it.name.replace(/^PIYVO /, ""); b.textContent = it.price ? inr(it.price[0]) : "On WhatsApp"; if (it.price) sum += it.price[0]; else ask++;
-      li.appendChild(a); li.appendChild(b); list.appendChild(li); });
-    totEl.textContent = inr(sum) + (ask ? " + membrane" : ""); addBtn.disabled = ids.length === 0;
-  }
-  page.addEventListener("change", function(e){ if (e.target.name === "bcab" || e.target.name === "bpart") render(); });
-  addBtn.addEventListener("click", function(){
-    chosen().forEach(function(id){ var c = card(id); if (!c) return; var q = c.querySelector(".qty output"); if (q && +q.textContent > 0) return; var add = c.querySelector(".add"); if (add) add.click(); });
-    var el = document.getElementById("shop-order"); if (el) el.scrollIntoView({behavior:"smooth", block:"start"});
-    addBtn.textContent = "Added to your order"; setTimeout(function(){ addBtn.textContent = "Add this build to my order"; }, 2200);
-  });
-  render();
-})();
-</script>
-
-</body>
-</html>
+  function observeReveal(scope
