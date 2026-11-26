@@ -56,7 +56,7 @@
     { "@type": "Question", "name": "Can I book a service through WhatsApp?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Message +91 89550 58746 on WhatsApp or use the booking form, which prepares a WhatsApp message with your details. Your visit is confirmed once the RIVSEVA team replies." } },
     { "@type": "Question", "name": "Do you provide RO maintenance for residential societies?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. RIVSEVA offers society maintenance arrangements with coverage, payment terms and response commitments agreed per contract." } },
     { "@type": "Question", "name": "Can RIVSEVA handle commercial RO systems?", "acceptedAnswer": { "@type": "Answer", "text": "RIVSEVA welcomes service and maintenance enquiries for commercial systems. Each system is assessed first, and you will be told clearly whether it falls within what can be supported." } },
-    { "@type": "Question", "name": "Do PIYVO purifiers come with a warranty?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Both PIYVO machines come with your choice of a 1, 2 or 3-year warranty plan. PIYVO Signature is ₹9,000, ₹12,000 or ₹15,000, and PIYVO Signature Black is ₹11,000, ₹14,000 or ₹16,500, depending on the plan you choose. Warranty terms are confirmed when you book." } },
+    { "@type": "Question", "name": "Do PIYVO purifiers come with a warranty?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every PIYVO comes with a 1-year warranty in its base price, and you can add a 2nd and a 3rd year. PIYVO Signature is ₹9,000, plus ₹3,000 for the 2nd year (₹12,000 in total) and ₹2,500 more for the 3rd year (₹14,500). PIYVO Signature Black is ₹11,000, plus ₹3,000 for the 2nd year (₹14,000) and ₹2,500 more for the 3rd year (₹16,500). Warranty terms are confirmed when you book." } },
     { "@type": "Question", "name": "Can I compare your rates with other service providers?", "acceptedAnswer": { "@type": "Answer", "text": "Please do. For any service, compare our rates with a local vendor or any service provider online. We always aim to give you top quality at a reasonable price." } }
   ]
 }
@@ -1378,18 +1378,11 @@ html.bag-lock{overflow:hidden}
   .hw::after{top:32px;bottom:32px;left:31px;right:auto;width:2px;height:auto;background:linear-gradient(180deg,#14A39A,#9FF0E4);transform-origin:50% 0;transform:scaleY(var(--p,1))}
 }
 
-/* cursor ring + touch ripples */
-.cur{position:fixed;left:0;top:0;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;border:1.5px solid #fff;mix-blend-mode:difference;pointer-events:none;z-index:9999;transition:width .25s,height .25s,margin .25s,background .25s,opacity .3s;opacity:0}
-.cur.on{opacity:1}
-.cur.big{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(255,255,255,.12)}
-.tap-ring{position:fixed;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;border:2px solid #14A39A;pointer-events:none;z-index:9998;animation:tapRing .7s ease-out forwards}
-@keyframes tapRing{to{transform:scale(5);opacity:0}}
 .x-pick a{will-change:transform}
 
 @media (prefers-reduced-motion:reduce){
   .x-fall{display:none}
   .pure .wv,.pure .pt,.pure .bb,.pure .spk{animation:none}
-  .cur,.tap-ring{display:none}
 }
 
 .x-hero{padding-top:clamp(3.5rem,7vw,6rem)}
@@ -2246,6 +2239,31 @@ html.pay-open{overflow:hidden}
   .gift-card{transition:none}
   .gift.unwrap .gb-lid,.gift.unwrap .gb-tk,.gift.unwrap .gb-glow,.gift.unwrap .gb-sp path,.gift.pop .gift-need,.gift.pop .ga-list li,.gift-fab.pop{animation:none}
 }
+
+/* ==== v24: PIYVO warranty shown as a base price plus each extra year ==== */
+.pv-plans button.inc{background:#F1F8F6;border-color:#BCDDD5}
+.pv-plans button.inc[aria-checked="true"]{border-color:var(--ink)}
+.pv-plans .pp.add{color:var(--tealx)}
+.pv-plans .ps{display:block;font-size:.7rem;line-height:1.3;color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums}
+.pv-plans button+button::before{content:"+";position:absolute;z-index:2;top:50%;left:calc(-.275rem - 10.5px);width:18px;height:18px;margin-top:-9px;border-radius:50%;background:#fff;border:1.5px solid var(--line);color:var(--muted);font:700 .8rem/15px var(--f-body);text-align:center;pointer-events:none;transition:background .25s,border-color .25s,color .25s}
+.pv-plans button.inc+button.inc::before{background:var(--tealx);border-color:var(--tealx);color:#fff}
+.pv-total .pv-note b{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+.pvx-plans button.inc{background:#F1F8F6;border-color:#BCDDD5}
+.pvx-plans button.inc[aria-checked="true"]{border-color:var(--ink)}
+.pvx-plans .pq{flex:none;text-align:right}
+.pvx-plans .p.add{color:var(--tealx)}
+.pvx-plans .pq .ps{font-size:.78rem;margin-top:.15rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pvx-bd{grid-column:1/-1;list-style:none;margin:0;padding:.75rem .95rem;border-radius:14px;background:rgba(5,22,34,.32);display:grid;gap:.45rem}
+.pvx-bd li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-size:.9rem;line-height:1.35;color:rgba(255,255,255,.92)}
+.pvx-bd b{color:#fff;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pvx-bd li.nx{padding-top:.5rem;border-top:1px dashed rgba(255,255,255,.24)}
+.pvx-bd li.nx b{font-weight:600;color:rgba(255,255,255,.85)}
+.pvx-bd button{font:inherit;color:#fff;background:none;border:0;padding:0;text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.5)}
+.pvx-bd button:hover{text-decoration-color:#fff}
+.pvx-bd button:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:4px}
+.pv-plans .ps .eq{display:none}
+.pv-total .pv-note .nb{white-space:nowrap}
+@media (max-width: 400px){ .pv-plans button{padding:.7rem .65rem} .pv-plans .ps .eq{display:inline} .pv-plans .ps .tt{display:none} }
 </style>
 </head>
 <body>
@@ -2328,7 +2346,7 @@ html.pay-open{overflow:hidden}
 <section class="view" data-route="home" tabindex="-1" aria-label="Home">
   <div class="x-hero">
     <canvas class="x-water" aria-hidden="true"></canvas>
-    <div class="x-aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i><span class="spot"></span><span class="grain"></span></div>
+    <div class="x-aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i><span class="grain"></span></div>
     <div class="wrap">
       <h1 class="x-h1" aria-label="Expert RO Care. Seamless Service. Lasting Trust."><span class="w" style="--i:0">Expert</span> <span class="w" style="--i:1">RO</span> <span class="w" style="--i:2">Care.</span><br><span class="w" style="--i:3">Seamless</span> <span class="w" style="--i:4">Service.</span><br><em><span class="w" style="--i:5">Lasting</span> <span class="w" style="--i:6">Trust.</span></em></h1>
       <p class="x-sub">RO service, AMC and installation across Gurugram, from the family that makes the purifiers. About 20 years in water purification. No middlemen.</p>
@@ -2441,8 +2459,8 @@ html.pay-open{overflow:hidden}
           <span class="pv-step-l">Machine &amp; finish</span>
           <div class="pv-sw" role="group" aria-label="Choose a machine and finish"><button type="button" style="--c:#4A90D9" data-m="sig" data-f="Azure" data-c="#4A90D9" data-name="Signature · Azure" data-desc="Pearl-white body with an azure accent, indicator display and a tank-level window." aria-pressed="true"><span class="sr">Signature · Azure</span></button><button type="button" style="--c:#D9752F" data-m="sig" data-f="Copper" data-c="#D9752F" data-name="Signature · Copper" data-desc="The same Signature machine with a warm copper-orange accent." aria-pressed="false"><span class="sr">Signature · Copper</span></button><button type="button" style="--c:#14181C" data-m="blk" data-f="Black" data-c="#14181C" data-name="Signature Black" data-desc="All-black body with a clear tank, so you can see your water. Our flagship." aria-pressed="false"><span class="sr">Signature Black</span></button></div>
           <span class="pv-step-l">Warranty plan</span>
-          <div class="pv-plans" role="radiogroup" aria-label="Choose a warranty plan"><button type="button" role="radio" data-y="1" aria-checked="true"><b>1 year</b><span class="pp">₹9,000</span></button><button type="button" role="radio" data-y="2" aria-checked="false"><b>2 years</b><span class="pp">₹12,000</span></button><button type="button" role="radio" data-y="3" aria-checked="false"><b>3 years</b><span class="pp">₹15,000</span><i>Longest cover</i></button></div>
-          <div class="pv-total"><span class="pv-price" data-v="9000">₹9,000</span><small class="pv-note">Complete purifier with 1-year warranty</small></div>
+          <div class="pv-plans" role="radiogroup" aria-label="Choose a warranty plan"><button type="button" role="radio" data-y="1" aria-checked="true" class="inc"><b>1 year</b><span class="pp">₹9,000</span><small class="ps">Base price</small></button><button type="button" role="radio" data-y="2" aria-checked="false"><b>2 years</b><span class="pp add">+₹3,000</span><small class="ps"><span class="eq">= </span>₹12,000<span class="tt"> total</span></small></button><button type="button" role="radio" data-y="3" aria-checked="false"><b>3 years</b><span class="pp add">+₹2,500</span><small class="ps"><span class="eq">= </span>₹14,500<span class="tt"> total</span></small><i>Longest cover</i></button></div>
+          <div class="pv-total"><span class="pv-price" data-v="9000">₹9,000</span><small class="pv-note">Base price, <b>1-year warranty</b> included</small></div>
           <div class="x-ctas"><button class="btn btn-primary pv-buy" type="button" data-upi hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg><span>Buy now · <span class="pv-buy-p">₹9,000</span></span></button><a class="btn btn-primary pv-book" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20book%20the%20PIYVO%20Signature%20%28Azure%29%20with%20the%201-year%20warranty%20plan%20%28%E2%82%B99%2C000%29.%20Please%20share%20the%20next%20steps." target="_blank" rel="noopener">Book this plan</a><a class="x-link" href="#piyvo">Explore both machines <span aria-hidden="true">›</span></a></div>
           <p class="pv-paynote" data-upi hidden><svg aria-hidden="true"><use href="#i-shield"/></svg><span>Pay the exact amount by UPI right here, or <span class="pv-wa-slot"></span></span></p>
         </div>
@@ -2957,7 +2975,7 @@ html.pay-open{overflow:hidden}
       <label class="faq-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input type="search" placeholder="Search, e.g. warranty, membrane, society" aria-label="Search the questions"></label>
       <p class="faq-none" hidden>No matching question. <a class="wa-general" href="https://wa.me/918955058746" target="_blank" rel="noopener">Ask us on WhatsApp</a>.</p>
       <div class="faq">
-        <details><summary>Do PIYVO purifiers come with a warranty? <span class="pm"><svg><use href="#i-plus"/></svg></span></summary><div class="ans"><p>Yes. Both PIYVO machines come with your choice of a 1, 2 or 3-year warranty plan. PIYVO Signature is ₹9,000, ₹12,000 or ₹15,000, and PIYVO Signature Black is ₹11,000, ₹14,000 or ₹16,500, depending on the plan you choose. Warranty terms are confirmed when you book.</p></div></details>
+        <details><summary>Do PIYVO purifiers come with a warranty? <span class="pm"><svg><use href="#i-plus"/></svg></span></summary><div class="ans"><p>Yes. Every PIYVO comes with a 1-year warranty in its base price, and you can add a 2nd and a 3rd year. PIYVO Signature is ₹9,000, plus ₹3,000 for the 2nd year (₹12,000 in total) and ₹2,500 more for the 3rd year (₹14,500). PIYVO Signature Black is ₹11,000, plus ₹3,000 for the 2nd year (₹14,000) and ₹2,500 more for the 3rd year (₹16,500). Warranty terms are confirmed when you book.</p></div></details>
         <details class="upi-faq"><summary>Can I pay for PIYVO on the website? <span class="pm"><svg><use href="#i-plus"/></svg></span></summary><div class="ans"><p>Yes. Choose your machine and warranty plan, tap Buy now, and pay the exact amount by UPI using the QR code. Then send us your UPI reference on WhatsApp. Your order is confirmed once we verify the payment.</p><p>We never ask for your UPI PIN or OTP. If you prefer, you can book on WhatsApp instead.</p></div></details>
         <details><summary>Can I compare your rates with other service providers? <span class="pm"><svg><use href="#i-plus"/></svg></span></summary><div class="ans"><p>Please do. For any service, compare our rates with a local vendor or any service provider online. We always aim to give you top quality at a reasonable price. <a href="#compare">Open our price check</a>.</p></div></details>
         <details open><summary>How often should an RO purifier be serviced? <span class="pm"><svg><use href="#i-plus"/></svg></span></summary><div class="ans"><p>There is no single schedule that suits every home. Many manufacturers suggest a routine check every three to six months, but the right interval depends on your water source (municipal supply, borewell or tanker), its dissolved-solids level, how much water you use each day and the purifier's design.</p><p>After checking your water and system, we suggest a schedule that fits your situation.</p></div></details>
@@ -3039,14 +3057,15 @@ html.pay-open{overflow:hidden}
         <div class="pvx-cfg">
           <div class="pvx-step"><h3><span class="pvx-n">1</span>Machine</h3><div class="pvx-ms" role="radiogroup" aria-label="Choose your machine"><button type="button" class="pvx-m" role="radio" data-m="sig" aria-checked="true"><span><b>Signature</b><small>Azure or copper accent, tank-level window</small></span><span class="from">From ₹9,000</span></button><button type="button" class="pvx-m" role="radio" data-m="blk" aria-checked="false"><span><b>Signature Black</b><small>All-black body, clear tank. Our flagship.</small></span><span class="from">From ₹11,000</span></button></div></div>
           <div class="pvx-step"><h3><span class="pvx-n">2</span>Finish</h3><div class="pvx-fin" data-for="sig" role="group" aria-label="Choose a finish"><button type="button" data-f="Azure" aria-pressed="true" style="--c:#4A90D9">Azure</button><button type="button" data-f="Copper" aria-pressed="false" style="--c:#D9752F">Copper</button></div><div class="pvx-fin" data-for="blk" hidden><span style="--c:#14181C">Black</span></div></div>
-          <div class="pvx-step"><h3><span class="pvx-n">3</span>Warranty plan</h3><div class="pvx-plans" role="radiogroup" aria-label="Choose a warranty plan"><button type="button" role="radio" data-y="1" aria-checked="true"><span class="r"><b>1-year warranty</b><small>Standard cover</small></span><span class="p">₹9,000</span></button><button type="button" role="radio" data-y="2" aria-checked="false"><span class="r"><b>2-year warranty</b><small>Extended cover</small></span><span class="p">₹12,000</span></button><button type="button" role="radio" data-y="3" aria-checked="false"><span class="r"><b>3-year warranty</b><small>Longest cover</small></span><span class="p">₹15,000</span></button></div></div>
+          <div class="pvx-step"><h3><span class="pvx-n">3</span>Warranty plan</h3><div class="pvx-plans" role="radiogroup" aria-label="Choose a warranty plan"><button type="button" role="radio" data-y="1" aria-checked="true" class="inc"><span class="r"><b>1-year warranty</b><small>Included in the base price</small></span><span class="pq"><span class="p">₹9,000</span><small class="ps">Base price</small></span></button><button type="button" role="radio" data-y="2" aria-checked="false"><span class="r"><b>2-year warranty</b><small>Adds a 2nd year</small></span><span class="pq"><span class="p add">+₹3,000</span><small class="ps">Total ₹12,000</small></span></button><button type="button" role="radio" data-y="3" aria-checked="false"><span class="r"><b>3-year warranty</b><small>Adds a 3rd year on top</small></span><span class="pq"><span class="p add">+₹2,500</span><small class="ps">Total ₹14,500</small></span></button></div></div>
           <div class="pvx-sum" aria-live="polite">
             <div><span class="pvx-sl">Your PIYVO</span><b class="pvx-st">Signature · Azure · 1-year warranty</b></div>
             <span class="pvx-total" data-v="9000">₹9,000</span>
+            <ul class="pvx-bd" aria-label="How the price adds up"><li><span>Purifier with 1-year warranty</span><b>₹9,000</b></li><li class="nx"><button type="button" data-y="2">Add a 2nd year of warranty</button><b>+₹3,000</b></li></ul>
             <button class="btn btn-primary pvx-buy" type="button" data-upi hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg><span>Buy now · Pay by UPI</span></button>
             <a class="btn btn-primary pvx-book" href="https://wa.me/918955058746?text=Hello%20RIVSEVA%2C%20I%20would%20like%20to%20book%20the%20PIYVO%20Signature%20%28Azure%29%20with%20the%201-year%20warranty%20plan%20%28%E2%82%B99%2C000%29.%20Please%20share%20the%20next%20steps." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Book this plan on WhatsApp</a>
           </div>
-          <p class="pvx-note">Prices are for the complete purifier with the warranty plan shown. Warranty terms and availability are confirmed when you book.</p>
+          <p class="pvx-note">The base price is the complete purifier with a 1-year warranty. Each extra year of warranty is added on top. Warranty terms and availability are confirmed when you book.</p>
         </div>
       </div>
     </div>
@@ -3665,12 +3684,6 @@ html.pay-open{overflow:hidden}
   document.querySelectorAll(".hero, .page-hero, .lp-hero").forEach(function(h){
     var a = document.createElement("div"); a.className = "aura"; a.setAttribute("aria-hidden","true"); a.innerHTML = "<i></i><i></i><i></i>"; h.insertBefore(a, h.firstChild);
   });
-  if (!reduce && window.matchMedia("(hover: hover)").matches){
-    document.querySelectorAll(".band-navy, .cta-final").forEach(function(el){
-      var s = document.createElement("div"); s.className = "spot"; s.setAttribute("aria-hidden","true"); el.insertBefore(s, el.firstChild);
-      el.addEventListener("pointermove", function(e){ var r = el.getBoundingClientRect(); s.style.setProperty("--mx", (e.clientX - r.left) + "px"); s.style.setProperty("--my", (e.clientY - r.top) + "px"); });
-    });
-  }
   var marks = document.querySelectorAll(".hl, .process");
   if ("IntersectionObserver" in window){
     var io2 = new IntersectionObserver(function(en){ en.forEach(function(x){ if (x.isIntersecting){ x.target.classList.add(x.target.classList.contains("process") ? "live" : "on"); io2.unobserve(x.target); } }); }, {threshold:.4});
@@ -3912,22 +3925,6 @@ html.pay-open{overflow:hidden}
     b.addEventListener("mouseleave", function(){ b.style.transform = ""; });
   });
 
-  /* ================= CURSOR RING + TAP RIPPLES ================= */
-  if (!reduce){
-    if (fine){
-      var c = document.createElement("div"); c.className = "cur"; c.setAttribute("aria-hidden","true"); document.body.appendChild(c);
-      var mx = -100, my = -100, cx = -100, cy = -100;
-      addEventListener("mousemove", function(e){ mx = e.clientX; my = e.clientY; c.classList.add("on"); }, {passive:true});
-      document.addEventListener("mouseleave", function(){ c.classList.remove("on"); });
-      document.addEventListener("mouseover", function(e){ c.classList.toggle("big", !!(e.target.closest && e.target.closest("a,button,[role=slider],.pure,input,select,textarea,label"))); });
-      (function follow(){ cx += (mx - cx)*.2; cy += (my - cy)*.2; c.style.transform = "translate(" + cx + "px," + cy + "px)"; raf(follow); })();
-    }
-    document.addEventListener("pointerdown", function(e){
-      if (e.target.closest && e.target.closest(".x-hero,.pure")) return;
-      var r = document.createElement("span"); r.className = "tap-ring"; r.style.left = e.clientX + "px"; r.style.top = e.clientY + "px";
-      document.body.appendChild(r); setTimeout(function(){ r.remove(); }, 750);
-    }, {passive:true});
-  }
 })();
 </script>
 <script>
@@ -3992,11 +3989,15 @@ html.pay-open{overflow:hidden}
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var fine = window.matchMedia && matchMedia("(pointer: fine)").matches;
   var raf = window.requestAnimationFrame || function(f){ return setTimeout(f,16); };
-  var PR = { sig:{1:9000,2:12000,3:15000}, blk:{1:11000,2:14000,3:16500} };
+  var PR = { sig:{1:9000,2:12000,3:14500}, blk:{1:11000,2:14000,3:16500} };
   var NAME = { sig:"PIYVO Signature", blk:"PIYVO Signature Black" };
   function inr(n){ return "₹" + Math.round(n).toLocaleString("en-IN"); }
   function wa(t){ return "https://wa.me/918955058746?text=" + encodeURIComponent(t); }
-  function msg(m, f, y){ return "Hello RIVSEVA, I would like to book the " + NAME[m] + (m === "sig" ? " (" + f + ")" : "") + " with the " + y + "-year warranty plan (" + inr(PR[m][y]) + "). Please share the next steps."; }
+  function ord(n){ return n === 2 ? "2nd" : n === 3 ? "3rd" : n + "th"; }
+  function add(m, n){ return PR[m][n] - PR[m][n-1]; }
+  function sumText(m, y){ var t = "base " + inr(PR[m][1]); for (var n = 2; n <= y; n++) t += " + " + ord(n) + " year " + inr(add(m, n)); return t; }
+  function planLabel(m, y){ return (y === 1 ? "1 year" : y + " years") + " warranty, " + inr(PR[m][y]) + (y === 1 ? ", the base price" : " in total, adding " + inr(add(m, y)) + " for the " + ord(y) + " year"); }
+  function msg(m, f, y){ return "Hello RIVSEVA, I would like to book the " + NAME[m] + (m === "sig" ? " (" + f + ")" : "") + " with the " + y + "-year warranty plan (" + inr(PR[m][y]) + (y > 1 ? ": " + sumText(m, y) : "") + "). Please share the next steps."; }
   function tween(el, to){
     var from = +el.getAttribute("data-v") || to; el.setAttribute("data-v", to);
     if (reduce || from === to){ el.textContent = inr(to); return; }
@@ -4013,8 +4014,17 @@ html.pay-open{overflow:hidden}
     var plans = [].slice.call(st.querySelectorAll(".pv-plans button")), k = 0, y = 1, auto = null, touched = false;
     function upd(){
       var b = sw[k], m = b.dataset.m;
-      plans.forEach(function(p){ var yy = +p.dataset.y; p.setAttribute("aria-checked", yy === y ? "true" : "false"); p.querySelector(".pp").textContent = inr(PR[m][yy]); });
-      tween(price, PR[m][y]); note.textContent = "Complete purifier with " + y + "-year warranty"; book.href = wa(msg(m, b.dataset.f, y));
+      plans.forEach(function(p){
+        var yy = +p.dataset.y, pp = p.querySelector(".pp"), ps = p.querySelector(".ps");
+        p.setAttribute("aria-checked", yy === y ? "true" : "false"); p.classList.toggle("inc", yy <= y);
+        pp.textContent = yy === 1 ? inr(PR[m][1]) : "+" + inr(add(m, yy)); pp.classList.toggle("add", yy > 1);
+        if (ps) ps.innerHTML = yy === 1 ? "Base price" : '<span class="eq">= </span>' + inr(PR[m][yy]) + '<span class="tt"> total</span>';
+        p.setAttribute("aria-label", planLabel(m, yy));
+      });
+      tween(price, PR[m][y]);
+      var nt = y === 1 ? "Base price, <b>1-year warranty</b> included" : '<span class="nb">Base <b>' + inr(PR[m][1]) + "</b></span>";
+      for (var n = 2; n <= y; n++) nt += ' <span class="nb">+ ' + ord(n) + " year <b>" + inr(add(m, n)) + "</b></span>";
+      note.innerHTML = nt; book.href = wa(msg(m, b.dataset.f, y));
     }
     function show(j){
       k = j; var b = sw[k];
@@ -4046,20 +4056,39 @@ html.pay-open{overflow:hidden}
     var S = { m:"sig", f:"Azure", y:1 };
     var mbs = [].slice.call(px.querySelectorAll(".pvx-m")), fbs = [].slice.call(px.querySelectorAll(".pvx-fin button")), groups = [].slice.call(px.querySelectorAll(".pvx-fin"));
     var pbs = [].slice.call(px.querySelectorAll(".pvx-plans button")), pims = [].slice.call(px.querySelectorAll(".pvx-img img"));
-    var sumT = px.querySelector(".pvx-st"), tot = px.querySelector(".pvx-total"), bk = px.querySelector(".pvx-book");
+    var sumT = px.querySelector(".pvx-st"), tot = px.querySelector(".pvx-total"), bk = px.querySelector(".pvx-book"), bd = px.querySelector(".pvx-bd");
     function key(){ return S.m === "blk" ? "Black" : S.f; }
     function render(){
       mbs.forEach(function(b){ b.setAttribute("aria-checked", b.dataset.m === S.m ? "true" : "false"); });
       groups.forEach(function(g){ g.hidden = g.dataset.for !== S.m; });
       fbs.forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.f === S.f ? "true" : "false"); });
       pims.forEach(function(im){ im.classList.toggle("on", im.dataset.f === key()); });
-      pbs.forEach(function(b){ var yy = +b.dataset.y; b.setAttribute("aria-checked", yy === S.y ? "true" : "false"); b.querySelector(".p").textContent = inr(PR[S.m][yy]); });
+      pbs.forEach(function(b){
+        var yy = +b.dataset.y, p = b.querySelector(".p"), ps = b.querySelector(".ps");
+        b.setAttribute("aria-checked", yy === S.y ? "true" : "false"); b.classList.toggle("inc", yy <= S.y);
+        p.textContent = yy === 1 ? inr(PR[S.m][1]) : "+" + inr(add(S.m, yy)); p.classList.toggle("add", yy > 1);
+        if (ps) ps.textContent = yy === 1 ? "Base price" : "Total " + inr(PR[S.m][yy]);
+        b.setAttribute("aria-label", planLabel(S.m, yy));
+      });
+      if (bd){
+        var h = "<li><span>Purifier with 1-year warranty</span><b>" + inr(PR[S.m][1]) + "</b></li>";
+        for (var n = 2; n <= 3; n++){
+          if (n <= S.y) h += "<li><span>" + ord(n) + " year of warranty</span><b>+" + inr(add(S.m, n)) + "</b></li>";
+          else { h += '<li class="nx"><button type="button" data-y="' + n + '">Add a ' + ord(n) + " year of warranty</button><b>+" + inr(add(S.m, n)) + "</b></li>"; break; }
+        }
+        bd.innerHTML = h;
+      }
       sumT.textContent = (S.m === "sig" ? "Signature · " + S.f : "Signature Black") + " · " + S.y + "-year warranty";
       tween(tot, PR[S.m][S.y]); bk.href = wa(msg(S.m, S.f, S.y));
     }
     mbs.forEach(function(b){ b.addEventListener("click", function(){ S.m = b.dataset.m; render(); }); });
     fbs.forEach(function(b){ b.addEventListener("click", function(){ S.f = b.dataset.f; render(); }); });
     pbs.forEach(function(b){ b.addEventListener("click", function(){ S.y = +b.dataset.y; render(); }); });
+    if (bd) bd.addEventListener("click", function(e){
+      var t = e.target.closest && e.target.closest("button[data-y]"); if (!t) return;
+      S.y = +t.dataset.y; render();
+      var nx = bd.querySelector("button[data-y]") || px.querySelector(".pvx-sum .btn:not([hidden])"); if (nx) nx.focus({preventScroll:true});
+    });
     render();
   }
 
@@ -6055,7 +6084,7 @@ return qrcode;
   document.documentElement.classList.add("has-upi");
   [].forEach.call(document.querySelectorAll("[data-upi]"), function(el){ el.hidden = false; });
 
-  var PR = { sig:{1:9000,2:12000,3:15000}, blk:{1:11000,2:14000,3:16500} };
+  var PR = { sig:{1:9000,2:12000,3:14500}, blk:{1:11000,2:14000,3:16500} };
   var touch = window.matchMedia && matchMedia("(pointer: coarse)").matches;
   function wa(t){ return "https://wa.me/918955058746?text=" + encodeURIComponent(t); }
 
@@ -6254,8 +6283,8 @@ return qrcode;
       rows:[["Service charge", "₹99", FREE], ["Parts", "Only what you choose"]], svc:"Domestic RO Service & Maintenance" },
     amc:{ t:"Society or office AMC", h:"Society or office AMC", p:"Planned RO maintenance for residential societies, RWAs and offices in Gurugram, quoted for your site.",
       rows:[["AMC plan", "Quoted for your site"]], link:["#society-amc", "Request a proposal"], msg:"Hello RIVSEVA, I would like a Society AMC proposal for our society or office in Gurugram." },
-    piyvo:{ t:"Buy a PIYVO purifier", h:"PIYVO purifiers", p:"Two super-premium machines made by our family business, with 1, 2 or 3-year warranty plans, serviced by RIVSEVA.",
-      rows:[["PIYVO Signature", "from ₹9,000"], ["PIYVO Signature Black", "from ₹11,000"]], link:["#piyvo", "See both machines"], msg:"Hello RIVSEVA, I am interested in a PIYVO purifier. Please share the details." }
+    piyvo:{ t:"Buy a PIYVO purifier", h:"PIYVO purifiers", p:"Two super-premium machines made by our family business and serviced by RIVSEVA. The base price includes a 1-year warranty, and you can add a 2nd and 3rd year.",
+      rows:[["PIYVO Signature", "from ₹9,000", "1-year warranty included"], ["PIYVO Signature Black", "from ₹11,000", "1-year warranty included"]], link:["#piyvo", "See both machines"], msg:"Hello RIVSEVA, I am interested in a PIYVO purifier. Please share the details." }
   };
   var opener = null, autoT = null, idleT = null, closeT = null, touched = false;
 
